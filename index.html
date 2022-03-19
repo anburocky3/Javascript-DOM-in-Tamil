@@ -2,15 +2,30 @@
 
 <head>
     <title>JS DOM in Tamil</title>
+
+    <!-- script -->
+    <script>
+        console.log(document.body);
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     let heading = document.getElementById('app');
+        //     heading.innerHTML = "<h1>I have changed!</h1>"
+        // })
+    </script>
 </head>
 
 <body>
     <div>
         <!-- Comments -->
-        <h1>Learn HTML DOM in Javascript 🔥</h1>
+        <h1 id="app">Learn HTML DOM in Javascript 🔥</h1>
+        <img src="https://i.pinimg.com/originals/16/ec/9f/16ec9fe6d3126b445920fccbc98b172f.gif" alt="Vadivelu Image">
     </div>
 
-    <script src="./assets/js/main.js"></script>
+    <script>
+        let myApp = document.getElementById('app')
+        // console.log(document.body.children[0].children[0].innerText = "Some Text");
+        myApp.innerText = "I have changed!"
+    </script>
+    <!-- <script src="./assets/js/main.js"></script> -->
 </body>
 
 </html>
