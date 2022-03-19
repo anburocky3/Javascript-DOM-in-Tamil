@@ -3,29 +3,48 @@
 <head>
     <title>JS DOM in Tamil</title>
 
-    <!-- script -->
     <script>
-        console.log(document.body);
-        // document.addEventListener('DOMContentLoaded', () => {
-        //     let heading = document.getElementById('app');
-        //     heading.innerHTML = "<h1>I have changed!</h1>"
-        // })
+        document.addEventListener('DOMContentLoaded', () => {
+            // reference
+            const myApp = document.getElementById('app')
+            const heading = myApp.children[0]
+            const image = myApp.children[1]
+
+            heading.innerHTML = `<h1>I have changed!</h1>`
+
+            console.log(`Image size: ${image.offsetWidth}, ${image.offsetHeight}`);
+        })
+
+        window.addEventListener('load', () => {
+            const myApp = document.getElementById('app')
+            const heading = myApp.children[0]
+            const image = myApp.children[1]
+
+            heading.innerHTML = `<h1>I have changed!</h1>`
+
+            console.log(`Image size: ${image.offsetWidth}, ${image.offsetHeight}`);
+            // CSS, Image
+        })
+
+        window.onunload = function () {
+            alert('You are about to be unloaded.')
+        }
+
+        window.onbeforeunload = function () {
+            alert('You are about to be unloaded before.')
+        }
     </script>
 </head>
 
 <body>
-    <div>
+    <div id="app">
         <!-- Comments -->
-        <h1 id="app">Learn HTML DOM in Javascript 🔥</h1>
-        <img src="https://i.pinimg.com/originals/16/ec/9f/16ec9fe6d3126b445920fccbc98b172f.gif" alt="Vadivelu Image">
+        <h1>Learn HTML DOM in Javascript 🔥</h1>
+        <img src="https://i.pinimg.com/originals/d7/4b/07/d74b075eaf8224f7710e8b69ebe985cd.gif" alt="Vadivelu Feeling">
     </div>
 
-    <script>
-        let myApp = document.getElementById('app')
-        // console.log(document.body.children[0].children[0].innerText = "Some Text");
-        myApp.innerText = "I have changed!"
-    </script>
     <!-- <script src="./assets/js/main.js"></script> -->
+
 </body>
 
 </html>
