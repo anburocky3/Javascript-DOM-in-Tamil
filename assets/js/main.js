@@ -12,3 +12,8 @@ const foodItems = foodContainer.getElementsByClassName("food-item");
 let allFoods = [].map.call(foodItems, (food) => food.textContent);
 
 console.log(allFoods);
+
+// getElementsByTagName;
+const foodItemsEl = document.getElementsByTagName("li");
+
+console.log(`I have ${foodItemsEl.length} items`);
