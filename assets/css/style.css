@@ -24,7 +24,7 @@ header {
 
 main {
     margin: 20px auto;
-    width: 800px;
+    width: 600px;
     background-color: white !important;
     padding: 30px;
     text-align: center;
@@ -37,4 +37,26 @@ main>div>h1 {
 
 main>div>p {
     font-size: 14px
+}
+
+/* form */
+.input-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-food {
+    padding: 5px 10px;
+    outline: none;
+    width: 100%;
+    margin-right: 10px;
+}
+
+.input-button {
+    padding: 6px 10px;
+    background-color: #1b63ff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    border-color: gray;
 }

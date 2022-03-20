@@ -1,7 +1,9 @@
-// How to select DOM Elements
+let inputFood = document.getElementById("input-food");
+let inputBtn = document.getElementById("input-btn");
+let response = document.getElementById("response");
 
-// 1. getElementById()
-// 2. getElementsByClassName()
-// 3. getElementsByTagName()
-// 4. Finding Elements using CSS Selector
-// 5. querySelector & querySelectorAll (DOM Query Selector)
+// console.log(inputFood, inputBtn);
+
+inputBtn.addEventListener("click", () => {
+  response.innerText = inputFood.value;
+});
