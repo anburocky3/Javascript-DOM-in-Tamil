@@ -1,16 +1,7 @@
-// html reference
-console.dir(document.documentElement.lang);
+// How to select DOM Elements
 
-console.log(document.head);
-console.log(document.body);
-
-console.log(document.body.constructor.name);
-
-console.log(document.body instanceof HTMLBodyElement);
-console.log(document.body instanceof HTMLElement);
-console.log(document.body instanceof Element);
-console.log(document.body instanceof Node);
-console.log(document.body instanceof EventTarget);
-
-// https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType
-console.log(document.body.nodeName);
+// 1. getElementById()
+// 2. getElementsByClassName()
+// 3. getElementsByTagName()
+// 4. Finding Elements using CSS Selector
+// 5. querySelector & querySelectorAll (DOM Query Selector)
