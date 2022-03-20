@@ -25,8 +25,6 @@ header {
 main {
     margin: 20px auto;
     width: 600px;
-    background-color: white !important;
-    padding: 30px;
     text-align: center;
 
 }
@@ -43,6 +41,8 @@ main>div>p {
 .input-container {
     display: flex;
     justify-content: space-between;
+    background-color: white;
+    padding: 30px;
 }
 
 .input-food {
@@ -59,4 +59,20 @@ main>div>p {
     border-radius: 5px;
     color: #fff;
     border-color: gray;
+}
+
+.food-container {
+    margin: 20px 0;
+    background: #fff;
+    list-style: none;
+    padding: 20px;
+    text-align: left;
+}
+
+.food-container .food-item {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid rgb(231, 231, 231);
+    margin: 10px 0;
+    color: gray;
 }
