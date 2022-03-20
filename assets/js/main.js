@@ -17,3 +17,10 @@ console.log(allFoods);
 const foodItemsEl = document.getElementsByTagName("li");
 
 console.log(`I have ${foodItemsEl.length} items`);
+
+// QuerySelectors
+const result = document.querySelector("li");
+
+const resultList = document.querySelectorAll("li");
+
+console.log(result[0].innerText);
