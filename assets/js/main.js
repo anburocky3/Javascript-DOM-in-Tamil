@@ -3,24 +3,28 @@ let inputBtn = document.getElementById("input-btn");
 let foodContainer = document.getElementById("food-container");
 
 inputBtn.addEventListener("click", () => {
-  foodContainer.innerHTML += `<li class="food-item">${inputFood.value.toUpperCase()}</li>`;
+  // creating li element
+  let newFoodItemEl = document.createElement("li");
+
+  // creating food items comment
+  let foodItemElComment = document.createComment("Food items");
+
+  // appending comment
+  foodContainer.append(foodItemElComment);
+
+  // assigning textContent & className to newFoodItemEl
+  newFoodItemEl.textContent = inputFood.value;
+  newFoodItemEl.className = "food-item";
+
+  // appending newly created element(newFoodItemEl) to foodContainer
+  foodContainer.append(newFoodItemEl);
+
+  // resetting the inputFood value
+  inputFood.value = "";
+
+  // or do it via templates here
+  //   foodContainer.innerHTML += `<li class="food-item">${inputFood.value.toUpperCase()}</li>`;
 });
 
-// getElementsByClassName
-const foodItems = foodContainer.getElementsByClassName("food-item");
-
-let allFoods = [].map.call(foodItems, (food) => food.textContent);
-
-console.log(allFoods);
-
-// getElementsByTagName;
-const foodItemsEl = document.getElementsByTagName("li");
-
-console.log(`I have ${foodItemsEl.length} items`);
-
 // QuerySelectors
-const result = document.querySelector("li");
-
-const resultList = document.querySelectorAll("li");
-
-console.log(result[0].innerText);
+const foodItemEl = document.querySelector("li");
