@@ -99,7 +99,7 @@ main>div>p {
 /* alerts */
 .alert {
     background: #29a746;
-    padding: 10px 10px;
+    padding: 10px 20px 10px 10px;
     border-radius: 5px;
     font-size: 12px;
     margin: 10px 0;
@@ -107,4 +107,13 @@ main>div>p {
     color: #fff;
     border-left: 5px solid green;
     font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+}
+
+.alert button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #fff;
 }
