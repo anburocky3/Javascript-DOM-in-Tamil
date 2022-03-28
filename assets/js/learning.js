@@ -1,41 +1,17 @@
 const foodContainerEl = document.getElementById("food-container");
 
-// normal way
-console.time("normal way");
-for (let i = 1; i <= 1000; i++) {
-  const newPEl = document.createElement("p");
-  newPEl.textContent = `Food Item ${i}`;
-  newPEl.className = "food-item";
-  foodContainerEl.append(newPEl);
-}
-console.timeEnd("normal way");
+const li = document.createElement("li");
+li.textContent = "Biriyani";
+li.className = "food-item";
 
-// documentFragment() way
-console.time("documentFragment way");
-let docFragment = document.createDocumentFragment();
-for (let i = 1; i <= 1000; i++) {
-  const newPEl = document.createElement("p");
-  newPEl.textContent = `Food Item ${i}`;
-  newPEl.className = "food-item";
-  docFragment.append(newPEl);
-}
-foodContainerEl.append(docFragment);
-console.timeEnd("documentFragment way");
+// appending
+foodContainerEl.append(li); //append()
+foodContainerEl.prepend(li); //prepend()
+foodContainerEl.before(li); //before()
+foodContainerEl.after(li); //after()
 
-// Challenge: Create your favourite foods using createElement & documentFragment
-const favouriteFood = [
-  "Chicken Biriyani",
-  "Mutton Biriyani",
-  "Fish Biriyani",
-  "Prawn Biriyani",
-];
+// before: Old way, use before()
+foodContainerEl.parentNode.insertBefore(li, foodContainerEl);
 
-const listFragment = document.createDocumentFragment();
-favouriteFood.forEach((favFood) => {
-  let li = document.createElement("li");
-  li.textContent = favFood;
-  li.className = "food-item";
-  listFragment.append(li);
-});
-
-foodContainerEl.append(listFragment);
+// after: Old way, use after()
+foodContainerEl.parentNode.insertBefore(li, foodContainerEl.nextSibling);
