@@ -1,43 +1,31 @@
-// // createElement example:
-// function createAlertviaDOM(message) {
-//   const main = document.getElementById("main");
+// 1. Creating elements using createElement()
+function createAlertviaDOM(message) {
+  const main = document.getElementById("main");
+  const div = document.createElement("div");
+  const textNode = document.createTextNode(message);
+  // injecting textNode into div
+  div.append(textNode);
+  div.className = "alert";
+  main.prepend(div);
+}
 
-//   const div = document.createElement("div");
+createAlertviaDOM("Hey, i'm the new div");
 
-//   const textNode = document.createTextNode(message);
-//   // You can use div.textContent as well as document.createTextNode, but don't use document.innerText
+// 1. creating element using template & innerHTML
+function createAlertViaTemplate(message) {
+  const div = `
+    <div class="alert">
+      ${message}
+    </div>
+  `;
 
-//   // injecting textNode into div
-//   div.append(textNode);
-//   div.className = "alert";
-//   main.prepend(div);
+  return div;
+}
 
-//   // Challenge
-//   // replace the <li class="food-item">${inputFood.value.toUpperCase()}</li> with createElement
-// }
+const main = document.getElementById("main");
 
-// createAlertviaDOM("Hey, i'm the new div");
+const onFoodItemsAdded = createAlertViaTemplate(
+  "Food items have been added Successfully!"
+);
 
-// ---------------------------
-// Modify alert content
-/* 
-These are setter/getter
-- innerHTML
-- innerText // Works with Elements
-- textContent // Works with Nodes 
-*/
-
-let alertEl = document.querySelector(".alert .alert-message"); // https://jsben.ch/8tEs3 // Check benchmark here
-
-// how to get existing contents
-console.log(alertEl.innerText);
-console.log(alertEl.innerHTML);
-console.log(alertEl.textContent);
-
-// how to set new/update contents
-alertEl.innerText =
-  "<div><strong>Successful!</strong> Hello, I've been modified!</div>";
-alertEl.innerHTML = "<strong>Successful!</strong> Hello, I've been modified!";
-alertEl.textContent = "<strong>Successful!</strong> Hello, I've been modified!";
-
-console.log(alertEl);
+main.innerHTML += onFoodItemsAdded;
