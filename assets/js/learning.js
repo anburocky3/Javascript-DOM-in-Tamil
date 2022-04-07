@@ -1,40 +1,26 @@
-// function createAlertViaDOM(message) {
-//   const main = document.getElementById("main");
+// createElement
+const main = document.getElementById("main");
 
-//   // Creating div element
-//   const div = document.createElement("div");
-//   const textNode = document.createTextNode(message);
+function createAlertviaDOM(message) {
+  const div = document.createElement("div");
+  const textNode = document.createTextNode(message);
+  // injecting textNode into div
+  div.append(textNode);
+  div.className = "alert";
+  main.prepend(div);
+}
 
-//   // Assigning className
-//   div.className = "alert";
+createAlertviaDOM("Hello i was created by createElement");
 
-//   // Append
-//   div.append(textNode);
-//   main.prepend(div);
-// }
+// innerHTML
+function createAlertviaTemplate(message) {
+  const template = `
+    <div class="alert">
+    ${message}
+    </div>
+    `;
 
-// createAlertViaDOM("Food is updated!");
+  main.innerHTML += template;
+}
 
-// ---------------------------
-// Modify alert content
-/* 
-These are setter/getter
-- innerHTML
-- innerText // Works with Elements
-- textContent // Works with Nodes 
-*/
-
-const alertEl = document.querySelector(".alert .alert-message"); // https://jsben.ch/8tEs3 // Check benchmark here
-
-// how to get existing contents
-console.log(alertEl.innerText);
-console.log(alertEl.innerHTML);
-console.log(alertEl.textContent);
-
-// setting
-alertEl.innerText =
-  "<strong>✅ Successful!</strong> Hello, i've been modified!";
-alertEl.innerHTML =
-  "<strong>✅ Successful!</strong> Hello, i've been modified!";
-alertEl.textContent =
-  "<strong>✅ Successful!</strong> Hello, i've been modified!";
+createAlertviaTemplate("Hello i was created by innerHTML");
