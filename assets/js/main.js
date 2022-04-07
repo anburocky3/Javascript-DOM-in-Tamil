@@ -3,28 +3,17 @@ let inputBtn = document.getElementById("input-btn");
 let foodContainer = document.getElementById("food-container");
 
 inputBtn.addEventListener("click", () => {
-  // creating li element
-  let newFoodItemEl = document.createElement("li");
+  const li = document.createElement("li");
+  const text = document.createTextNode(inputFood.value);
 
-  // creating food items comment
-  let foodItemElComment = document.createComment("Food items");
+  const comment = document.createComment("Creating a li");
 
-  // appending comment
-  foodContainer.append(foodItemElComment);
+  // Assigning className
+  li.className = "food-item";
 
-  // assigning textContent & className to newFoodItemEl
-  newFoodItemEl.textContent = inputFood.value;
-  newFoodItemEl.className = "food-item";
+  // append
+  li.append(text);
+  li.append(comment);
 
-  // appending newly created element(newFoodItemEl) to foodContainer
-  foodContainer.append(newFoodItemEl);
-
-  // resetting the inputFood value
-  inputFood.value = "";
-
-  // or do it via templates here
-  //   foodContainer.innerHTML += `<li class="food-item">${inputFood.value.toUpperCase()}</li>`;
+  foodContainer.append(li);
 });
-
-// QuerySelectors
-const foodItemEl = document.querySelector("li");
