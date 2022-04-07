@@ -1,17 +1,26 @@
-const foodContainerEl = document.getElementById("food-container");
+const foodContainerEl = document.querySelector("#food-container");
+
+// How it will get inserted?
+// <!-- beforebegin -->
+// <p>
+//   <!-- afterbegin -->
+//   foo
+//   <!-- beforeend -->
+// </p>
+// <!-- afterend -->
+
+foodContainerEl.insertAdjacentHTML("afterbegin", "<li>Food Items</li>");
+foodContainerEl.insertAdjacentHTML("afterend", "<li>Hello there</li>");
+
+foodContainerEl.insertAdjacentHTML("beforebegin", "<li>Hello there</li>");
+foodContainerEl.insertAdjacentHTML("beforeend", "<li>Hello there</li>");
 
 const li = document.createElement("li");
-li.textContent = "Biriyani";
-li.className = "food-item";
+li.textContent = "New List";
 
-// appending
-foodContainerEl.append(li); //append()
-foodContainerEl.prepend(li); //prepend()
-foodContainerEl.before(li); //before()
-foodContainerEl.after(li); //after()
+foodContainerEl.insertAdjacentElement("afterbegin", li);
 
-// before: Old way, use before()
-foodContainerEl.parentNode.insertBefore(li, foodContainerEl);
-
-// after: Old way, use after()
-foodContainerEl.parentNode.insertBefore(li, foodContainerEl.nextSibling);
+foodContainerEl.insertAdjacentText(
+  "beforebegin",
+  "Just Pure text without html tags"
+);
