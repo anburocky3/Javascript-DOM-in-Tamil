@@ -1,28 +1,18 @@
 const foodContainerEl = document.querySelector("#food-container");
+const duplicateEl = document.getElementById("duplicate");
+const resyncBtn = document.getElementById("resyncBtn");
 
-const sambarList = document.querySelector("#food-container :first-child");
+// cloneNode(false) only clones the top element
+const foodDuplicate = foodContainerEl.cloneNode();
 
-const newLi = document.createElement("li");
-newLi.textContent = "Paruppu Sambar";
-newLi.className = "food-item";
+resyncBtn.addEventListener("click", () => {
+  duplicateEl.innerHTML = "";
 
-// new way (replaceWith)
-sambarList.replaceWith(newLi);
+  // cloneNode(true) clones all elements and subtrees.
+  const foodDuplicate = foodContainerEl.cloneNode(true);
 
-// old way (replaceChild)
-sambarList.parentNode.replaceChild(newLi, sambarList);
+  duplicateEl.append(foodDuplicate);
 
-/* 
- replaceChildren
-*/
-
-// create new list
-const maagi = document.createElement("li");
-maagi.textContent = "Maagi";
-maagi.className = "food-item";
-
-const eggRice = document.createElement("li");
-eggRice.textContent = "Egg rice";
-eggRice.className = "food-item";
-
-foodContainerEl.replaceChildren(maagi, eggRice);
+  console.log(foodDuplicate.innerHTML);
+  console.log(foodDuplicate.nodeName);
+});
