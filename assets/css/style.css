@@ -87,6 +87,10 @@ main>div>p {
     color: gray;
     text-transform: capitalize;
     border-radius: 5px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .food-container .food-item:hover {

@@ -3,6 +3,10 @@
 <head>
     <title>JS DOM in Tamil</title>
     <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -24,13 +28,19 @@
             <button class="input-button" id="input-btn">Save</button>
         </div>
         <ul id="food-container" class="food-container">
-            <li class="food-item">Sambar</li>
-            <li class="food-item">Rasam </li>
-            <li class="food-item">Curd</li>
+            <li class="food-item">
+                <div>Sambar</div>
+                <div onclick="removeFoodItem(event)"><i class="fa fa-xmark"></i></div>
+            </li>
+            <li class="food-item">
+                <div>Rasam</div>
+                <div onclick="removeFoodItem(event)"><i class="fa fa-xmark"></i></div>
+            </li>
+            <li class="food-item">
+                <div>Curd</div>
+                <div onclick="removeFoodItem(event)"><i class="fa fa-xmark"></i></div>
+            </li>
         </ul>
-
-        <button id="resyncBtn">Resync</button>
-        <div id="duplicate"></div>
     </main>
 
     <script src="./assets/js/main.js"></script>

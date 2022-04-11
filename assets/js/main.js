@@ -6,25 +6,34 @@ inputBtn.addEventListener("click", () => {
   // creating li element
   let newFoodItemEl = document.createElement("li");
 
-  // creating food items comment
-  let foodItemElComment = document.createComment("Food items");
+  let div = document.createElement("div"); //for list-item
+  let divBtn = document.createElement("div");
 
-  // appending comment
-  foodContainer.append(foodItemElComment);
+  newFoodItemEl.append(div, divBtn);
 
   // assigning textContent & className to newFoodItemEl
-  newFoodItemEl.textContent = inputFood.value;
+  div.textContent = inputFood.value;
   newFoodItemEl.className = "food-item";
+
+  divBtn.parentElement.setAttribute("onClick", "removeFoodItem(event)");
+  divBtn.innerHTML = `<i class="fa fa-xmark"></i>`;
+  newFoodItemEl.append(divBtn);
 
   // appending newly created element(newFoodItemEl) to foodContainer
   foodContainer.append(newFoodItemEl);
 
   // resetting the inputFood value
   inputFood.value = "";
-
-  // or do it via templates here
-  //   foodContainer.innerHTML += `<li class="food-item">${inputFood.value.toUpperCase()}</li>`;
 });
 
-// QuerySelectors
-const foodItemEl = document.querySelector("li");
+// remove Food items
+function removeFoodItem(event) {
+  const existingList = event.target.parentNode.parentNode;
+  console.log("logging event", event.target.parentNode.parentNode);
+
+  // new way
+  // existingList.remove();
+
+  // old way
+  existingList.parentNode.removeChild(existingList);
+}
