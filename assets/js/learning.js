@@ -1,26 +1,28 @@
 const foodContainerEl = document.querySelector("#food-container");
 
-// How it will get inserted?
-// <!-- beforebegin -->
-// <p>
-//   <!-- afterbegin -->
-//   foo
-//   <!-- beforeend -->
-// </p>
-// <!-- afterend -->
+const sambarList = document.querySelector("#food-container :first-child");
 
-foodContainerEl.insertAdjacentHTML("afterbegin", "<li>Food Items</li>");
-foodContainerEl.insertAdjacentHTML("afterend", "<li>Hello there</li>");
+const newLi = document.createElement("li");
+newLi.textContent = "Paruppu Sambar";
+newLi.className = "food-item";
 
-foodContainerEl.insertAdjacentHTML("beforebegin", "<li>Hello there</li>");
-foodContainerEl.insertAdjacentHTML("beforeend", "<li>Hello there</li>");
+// new way (replaceWith)
+sambarList.replaceWith(newLi);
 
-const li = document.createElement("li");
-li.textContent = "New List";
+// old way (replaceChild)
+sambarList.parentNode.replaceChild(newLi, sambarList);
 
-foodContainerEl.insertAdjacentElement("afterbegin", li);
+/* 
+ replaceChildren
+*/
 
-foodContainerEl.insertAdjacentText(
-  "beforebegin",
-  "Just Pure text without html tags"
-);
+// create new list
+const maagi = document.createElement("li");
+maagi.textContent = "Maagi";
+maagi.className = "food-item";
+
+const eggRice = document.createElement("li");
+eggRice.textContent = "Egg rice";
+eggRice.className = "food-item";
+
+foodContainerEl.replaceChildren(maagi, eggRice);
