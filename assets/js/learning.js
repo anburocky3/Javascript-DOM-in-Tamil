@@ -3,23 +3,23 @@ const foodContainerEl = document.getElementById("food-container");
 // normal way
 console.time("normal way");
 for (let i = 1; i <= 1000; i++) {
-  const newPEl = document.createElement("p");
-  newPEl.textContent = `Food Item ${i}`;
-  newPEl.className = "food-item";
-  foodContainerEl.append(newPEl);
+  const li = document.createElement("li");
+  li.textContent = `Food Item ${i}`;
+  li.className = "food-item";
+  foodContainerEl.append(li);
 }
 console.timeEnd("normal way");
 
 // documentFragment() way
 console.time("documentFragment way");
-let docFragment = document.createDocumentFragment();
+let fragment = document.createDocumentFragment();
 for (let i = 1; i <= 1000; i++) {
-  const newPEl = document.createElement("p");
-  newPEl.textContent = `Food Item ${i}`;
-  newPEl.className = "food-item";
-  docFragment.append(newPEl);
+  const li = document.createElement("li");
+  li.textContent = `Food Item: ${i}`;
+  li.className = "food-item";
+  fragment.append(li);
 }
-foodContainerEl.append(docFragment);
+foodContainerEl.append(fragment);
 console.timeEnd("documentFragment way");
 
 // Challenge: Create your favourite foods using createElement & documentFragment
