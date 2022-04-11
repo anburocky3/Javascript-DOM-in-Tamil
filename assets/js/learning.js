@@ -10,10 +10,10 @@ const foodContainerEl = document.querySelector("#food-container");
 // <!-- afterend -->
 
 foodContainerEl.insertAdjacentHTML("afterbegin", "<li>Food Items</li>");
-foodContainerEl.insertAdjacentHTML("afterend", "<li>Hello there</li>");
+foodContainerEl.insertAdjacentHTML("afterend", "Food Items");
 
-foodContainerEl.insertAdjacentHTML("beforebegin", "<li>Hello there</li>");
-foodContainerEl.insertAdjacentHTML("beforeend", "<li>Hello there</li>");
+foodContainerEl.insertAdjacentHTML("beforebegin", "<h1>beforeBegin</h1>");
+foodContainerEl.insertAdjacentHTML("beforeend", "<h1>beforeEnd</h1>");
 
 const li = document.createElement("li");
 li.textContent = "New List";
