@@ -1,13 +1,15 @@
-const foodItem = document.querySelector("#food-container li");
+const foodContainerEl = document.querySelector("#food-container li");
 
-console.log(foodItem.parentNode);
-console.log(foodItem.parentElement);
+console.log(foodContainerEl.parentNode); // Finding parentNode
+console.log(foodContainerEl.parentElement.parentElement); // Finding parentElement
 
-console.log(document.body.parentNode); // the <html> element
-console.log(document.body.parentElement); // the <html> element
+console.log(document.body.parentNode); // returns <html>
+console.log(document.body.parentElement); // returns <html>
 
-console.log(document.documentElement.parentNode); // the document node
-console.log(document.documentElement.parentElement); // null
+console.dir(document.documentElement.parentNode); // the document node
+console.dir(document.documentElement.parentElement); // null
+
+console.log(document.nodeType); // checking nodeType
 
 // closest
-console.log(foodItem.closest("main"));
+console.log(foodContainerEl.closest("main")); // match closest occurrence.
