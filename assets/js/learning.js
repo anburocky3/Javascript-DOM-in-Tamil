@@ -1,18 +1,25 @@
 const foodContainerEl = document.querySelector("#food-container");
 
+const list = document.querySelectorAll("li");
+
 // querySelectorAll: NodeList
-const queryChildren = foodContainerEl.querySelectorAll("li");
-console.log(queryChildren, queryChildren.length);
+console.log(list, list.length);
 
 // .children: HTMLCollections
-console.log(foodContainerEl.children);
+console.log(foodContainerEl.children, foodContainerEl.children.length);
 
-// .childNodes: NodeList
+// childNodes: NodeList
 console.log(foodContainerEl.childNodes);
 
-// first/last
-console.log("firstChild", foodContainerEl.firstChild);
-console.log(foodContainerEl.firstElementChild);
+// first/firstElementChild
+console.log(foodContainerEl.firstChild);
+console.log(foodContainerEl.firstElementChild.innerText);
 
-console.log("lastChild", foodContainerEl.lastChild);
-console.log(foodContainerEl.lastElementChild);
+// last/lastElementChild
+console.log(foodContainerEl.lastChild);
+console.log(foodContainerEl.lastElementChild.innerText);
+
+const header = document.querySelector("header");
+
+// if you access the child which doesn't exist, it will return null.
+console.log(header.firstElementChild);
