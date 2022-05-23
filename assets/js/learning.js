@@ -1,13 +1,9 @@
-const foodItem = document.querySelector("#food-container li");
+const numbers = document.querySelector("ul:last-child li");
 
-console.log(foodItem.parentNode);
-console.log(foodItem.parentElement);
+// Any DOM Nodes
+console.log(numbers.nextSibling);
+console.log(numbers.previousSibling);
 
-console.log(document.body.parentNode); // the <html> element
-console.log(document.body.parentElement); // the <html> element
-
-console.log(document.documentElement.parentNode); // the document node
-console.log(document.documentElement.parentElement); // null
-
-// closest
-console.log(foodItem.closest("main"));
+// Any Element Nodes
+console.log(numbers.nextElementSibling.innerText);
+console.log(numbers.previousElementSibling.innerText);
