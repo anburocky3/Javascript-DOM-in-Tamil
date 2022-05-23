@@ -1,37 +1,18 @@
-const foodContainerEl = document.querySelectorAll("#food-container li");
+const foodContainerEl = document.querySelector("#food-container");
 
-const favouriteFood = [
-  "Chicken Biriyani",
-  "Mutton Biriyani",
-  "Fish Biriyani",
-  "Prawn Biriyani",
-];
+// querySelectorAll: NodeList
+const queryChildren = foodContainerEl.querySelectorAll("li");
+console.log(queryChildren, queryChildren.length);
 
-// How to iterate?
+// .children: HTMLCollections
+console.log(foodContainerEl.children);
 
-// for loop
-for (let i = 0; i < favouriteFood.length; i++) {
-  console.log(favouriteFood[i]);
-}
+// .childNodes: NodeList
+console.log(foodContainerEl.childNodes);
 
-// for..of
-for (const item of favouriteFood) {
-  console.log(item);
-}
+// first/last
+console.log("firstChild", foodContainerEl.firstChild);
+console.log(foodContainerEl.firstElementChild);
 
-// convert existing list into javascript array?
-const foodItems = [];
-
-for (let i = 0; i < foodContainerEl.length; i++) {
-  //   console.log(foodContainerEl[i].innerText);
-  foodItems.push(foodContainerEl[i].innerText);
-}
-
-console.log(foodItems);
-
-// spread operator
-foodContainerEl.forEach((food) => console.log("NodeLists", food));
-[...foodContainerEl].forEach((food) => console.log("Spread", food));
-
-// Array.from
-Array.from(foodContainerEl).forEach((food) => console.log("Array.From", food));
+console.log("lastChild", foodContainerEl.lastChild);
+console.log(foodContainerEl.lastElementChild);
