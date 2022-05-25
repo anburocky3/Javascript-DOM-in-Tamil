@@ -121,3 +121,15 @@ main>div>p {
     cursor: pointer;
     color: #fff;
 }
+
+/* delete this after this exercise */
+.nameInput-container {
+    background: #FFF;
+    padding: 10px
+}
+
+#nameInput {
+    padding: 2px 10px;
+    font-size: 12px;
+    outline: none
+}
