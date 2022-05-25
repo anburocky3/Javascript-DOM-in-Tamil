@@ -1,21 +1,29 @@
 const input = document.querySelector("#nameInput");
 
-// You can get attributes of html element using object syntax. (DOT Notation)
-console.log(input.type);
-console.log(input.id);
-console.log(input.name);
-console.log(input.placeholder);
+// Setting
+// element.setAttribute("name", value) // set the value for the attribute
+input.setAttribute("value", "Anbu");
 
-// Modify the input value.
-input.value = "Trisha";
-input.value = 3;
-input.setAttribute("value", 3);
-console.log(typeof input.value);
-console.log(typeof parseInt(input.value, 10));
+// Getting
+const isAliveDOM = input.getAttribute("is-alive");
+const placeDOM = input.getAttribute("place");
 
-// However, the web browser only converts the standard attributes to the DOM object’s properties.
-console.log(input.isAlive);
+// Get All attributes (Live Collections)
+console.log(input.attributes.value); // get attribute using property name
+console.log(input.attributes[5], input.attributes[5].value); // get attribute using index
+console.log(input.attributes["is-alive"]); // get attribute using index
+console.log(isAliveDOM, placeDOM);
 
-// Task: Create an input field of Age, which accepts number and change it via DOM using Javascript.
-// input.value = 26;
-// console.log(`My age is: ${26}`);
+// Methods
+console.log(input.hasAttribute("age")); // checks for existence.
+console.log(input.removeAttribute("is-alive")); // removes the attribute.
+console.log(input.style); // returns CSSStyleDeclaration instead of values.
+
+// data-* attributes
+console.log(input.dataset.spokenLang); // get data-* values like this.
+console.log(input.dataset.working === "true"); // converting string to boolean
+
+// Task: Display all attributes dynamically.
+// for (let attr of input.attributes) {
+//   console.log(`${attr.name} = ${attr.value}`);
+// }
