@@ -1,29 +1,38 @@
 const input = document.querySelector("#nameInput");
+const btn = document.querySelector(".nameInput-container button");
 
-// Setting
-// element.setAttribute("name", value) // set the value for the attribute
-input.setAttribute("value", "Anbu");
+// style="padding: 4px 10px; background: royalblue; color:#fff; border:none; border-radius: 5px; font-size:12px;"
 
-// Getting
-const isAliveDOM = input.getAttribute("is-alive");
-const placeDOM = input.getAttribute("place");
+// 1. Using setAttribute
+btn.setAttribute("style", "color:white;background-color:royalblue");
 
-// Get All attributes (Live Collections)
-console.log(input.attributes.value); // get attribute using property name
-console.log(input.attributes[5], input.attributes[5].value); // get attribute using index
-console.log(input.attributes["is-alive"]); // get attribute using index
-console.log(isAliveDOM, placeDOM);
+// 2. Direct Property Access
+btn.style.padding = "4px 10px";
+btn.style.background = "royalblue";
+btn.style.color = "#FFF";
+btn.style.border = "none";
+btn.style.borderRadius = "5px";
+btn.style.fontSize = "12px";
 
-// Methods
-console.log(input.hasAttribute("age")); // checks for existence.
-console.log(input.removeAttribute("is-alive")); // removes the attribute.
-console.log(input.style); // returns CSSStyleDeclaration instead of values.
+// 3. cssText
+btn.style.cssText = "padding: 4px 10px";
+btn.style.cssText += "font-weight: bold"; // concatenate
 
-// data-* attributes
-console.log(input.dataset.spokenLang); // get data-* values like this.
-console.log(input.dataset.working === "true"); // converting string to boolean
+// Get style information
+console.log(btn.style.padding);
 
-// Task: Display all attributes dynamically.
-// for (let attr of input.attributes) {
-//   console.log(`${attr.name} = ${attr.value}`);
+// getComputedStyle()
+let style = window.getComputedStyle(btn, ":hover");
+console.log(style);
+
+// Task: Remove class styling defined in style.css and write the css using Javascript DOM.
+// .nameInput-container {
+//     background: #FFF;
+//     padding: 10px
+// }
+
+// #nameInput {
+//     padding: 2px 10px;
+//     font-size: 12px;
+//     outline: none
 // }
