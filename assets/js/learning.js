@@ -1,38 +1,41 @@
 const input = document.querySelector("#nameInput");
-const btn = document.querySelector(".nameInput-container button");
 
-// style="padding: 4px 10px; background: royalblue; color:#fff; border:none; border-radius: 5px; font-size:12px;"
+// Get
+console.log(input.className);
+input.className += " newClassName1 newClassName2";
+console.log(input.className);
 
-// 1. Using setAttribute
-btn.setAttribute("style", "color:white;background-color:royalblue");
+// To completely overwrite the className
+// input.className = "className";
+// console.log(input.className);
 
-// 2. Direct Property Access
-btn.style.padding = "4px 10px";
-btn.style.background = "royalblue";
-btn.style.color = "#FFF";
-btn.style.border = "none";
-btn.style.borderRadius = "5px";
-btn.style.fontSize = "12px";
+// Get class list using el.classList
+console.log(input.classList);
 
-// 3. cssText
-btn.style.cssText = "padding: 4px 10px";
-btn.style.cssText += "font-weight: bold"; // concatenate
+// Loop over all classList
+for (let cssClass of input.classList) {
+  console.log(cssClass);
+}
 
-// Get style information
-console.log(btn.style.padding);
+// Manipulate ClassList
+input.classList.add("primary", "secondary", "three"); // add class to element
+input.classList.replace("three", "third"); // replace old className with new className
+input.classList.remove("primary", "nameInput"); // remove className by name
+console.log(input.classList.contains("secondary")); // Check if className exist
+input.classList.toggle("toggleClass"); // If the class list doesn’t contain the class name, the toggle() method adds it to the class list.
 
-// getComputedStyle()
-let style = window.getComputedStyle(btn, ":hover");
-console.log(style);
+setTimeout(() => input.classList.toggle("toggleClass"), 2500);
 
-// Task: Remove class styling defined in style.css and write the css using Javascript DOM.
-// .nameInput-container {
-//     background: #FFF;
-//     padding: 10px
-// }
+// Task: Show div based on click (toggle)
+const showBtn = document.getElementById("showBtn");
+const divEl = document.querySelector(".nameInput-container");
 
-// #nameInput {
-//     padding: 2px 10px;
-//     font-size: 12px;
-//     outline: none
-// }
+showBtn.addEventListener("click", () => {
+  if (divEl.style.display === "none") {
+    divEl.style.display = "block";
+    showBtn.textContent = "Hide";
+  } else {
+    divEl.style.display = "none";
+    showBtn.textContent = "Show";
+  }
+});
