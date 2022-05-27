@@ -30,12 +30,24 @@ setTimeout(() => input.classList.toggle("toggleClass"), 2500);
 const showBtn = document.getElementById("showBtn");
 const divEl = document.querySelector(".nameInput-container");
 
+// showBtn.addEventListener("click", () => {
+//   if (divEl.style.display === "none") {
+//     divEl.style.display = "block";
+//     showBtn.textContent = "Hide";
+//   } else {
+//     divEl.style.display = "none";
+//     showBtn.textContent = "Show";
+//   }
+// });
+
 showBtn.addEventListener("click", () => {
-  if (divEl.style.display === "none") {
-    divEl.style.display = "block";
+  if (divEl.classList.contains("hide")) {
+    divEl.classList.remove("hide");
     showBtn.textContent = "Hide";
+    showBtn.style.background = "#121212";
   } else {
-    divEl.style.display = "none";
+    divEl.classList.add("hide");
     showBtn.textContent = "Show";
+    showBtn.style.background = "royalblue";
   }
 });

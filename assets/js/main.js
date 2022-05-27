@@ -32,8 +32,8 @@ function removeFoodItem(event) {
   console.log("logging event", event.target.parentNode.parentNode);
 
   // new way
+  existingList.classList.add("hide");
   // existingList.remove();
-
   // old way
-  existingList.parentNode.removeChild(existingList);
+  // existingList.parentNode.removeChild(existingList);
 }
