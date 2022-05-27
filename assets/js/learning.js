@@ -1,38 +1,48 @@
-const input = document.querySelector("#nameInput");
-const btn = document.querySelector(".nameInput-container button");
+const inputName = document.querySelector(".input-name-container input");
+const btnEl = document.querySelector(".input-name-container button");
 
-// style="padding: 4px 10px; background: royalblue; color:#fff; border:none; border-radius: 5px; font-size:12px;"
+// style="padding: 6px 10px;font-size:10px;background-color:royalblue;border:none;border-radius:5px;color:#FFF;"
 
-// 1. Using setAttribute
-btn.setAttribute("style", "color:white;background-color:royalblue");
+// 1. setAttribute
+btnEl.setAttribute(
+  "style",
+  "padding: 6px 10px;font-size:10px;background-color:royalblue;border:none;border-radius:5px;color:#FFF;"
+);
 
-// 2. Direct Property Access
-btn.style.padding = "4px 10px";
-btn.style.background = "royalblue";
-btn.style.color = "#FFF";
-btn.style.border = "none";
-btn.style.borderRadius = "5px";
-btn.style.fontSize = "12px";
+// 2. Direct Property access
+console.log(btnEl.style.cssText);
+btnEl.style.padding = "6px 10px";
+btnEl.style.fontSize = "10px";
+btnEl.style.backgroundColor = "royalblue";
+btnEl.style.border = "none";
+btnEl.style.borderRadius = "5px";
+btnEl.style.color = "#FFF";
 
 // 3. cssText
-btn.style.cssText = "padding: 4px 10px";
-btn.style.cssText += "font-weight: bold"; // concatenate
+btnEl.style.cssText =
+  "padding: 6px 10px;font-size:10px;background-color:royalblue;border:none;border-radius:5px;color:#FFF;";
+// btnEl.style.cssText += "font-weight:bold;";
 
-// Get style information
-console.log(btn.style.padding);
+// Getting the style
+console.log(btnEl.style.backgroundColor);
 
 // getComputedStyle()
-let style = window.getComputedStyle(btn, ":hover");
-console.log(style);
+console.log(window.getComputedStyle(btnEl, ":hover"));
 
 // Task: Remove class styling defined in style.css and write the css using Javascript DOM.
-// .nameInput-container {
-//     background: #FFF;
-//     padding: 10px
+// .input-name-container {
+//   background: #FFF;
+//   border-radius: 5px;
+//   padding: 10px;
 // }
 
-// #nameInput {
-//     padding: 2px 10px;
-//     font-size: 12px;
-//     outline: none
+// .input-name-container input {
+//   padding: 2px 10px;
+//   outline: none;
+//   font-size: 12px;
 // }
+const inputContainerEl = document.querySelector(".input-name-container");
+const inputEl = document.querySelector(".input-name-container input");
+inputContainerEl.style.cssText =
+  "background: #FFF;border-radius: 5px;padding: 10px;";
+inputEl.style.cssText = "padding: 2px 10px;outline: none;font-size: 12px;";
