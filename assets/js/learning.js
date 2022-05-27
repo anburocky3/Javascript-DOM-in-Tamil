@@ -1,20 +1,22 @@
-const input = document.querySelector("#nameInput");
+const inputName = document.querySelector(".input-name-container input");
 
-// You can get attributes of html element using object syntax. (DOT Notation)
-console.log(input.type);
-console.log(input.id);
-console.log(input.name);
-console.log(input.placeholder);
+// You can get attributes value by DOT Notation
+console.log(inputName.type);
+console.log(inputName.id);
+console.log(inputName.name);
+console.log(inputName.placeholder);
 
-// Modify the input value.
-input.value = "Trisha";
-input.value = 3;
-input.setAttribute("value", 3);
-console.log(typeof input.value);
-console.log(typeof parseInt(input.value, 10));
+const userAge = prompt("What is your age");
+// Modifying the value
+// inputName.value = "Trisha";
+inputName.setAttribute("value", "Rajini");
+inputName.setAttribute("value", userAge);
+const saveInt = parseInt(inputName.value, 10);
+console.log(typeof inputName.value);
+console.log(typeof saveInt);
 
 // However, the web browser only converts the standard attributes to the DOM object’s properties.
-console.log(input.isAlive);
+console.log(inputName.isAlive);
 
 // Task: Create an input field of Age, which accepts number and change it via DOM using Javascript.
 // input.value = 26;

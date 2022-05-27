@@ -122,14 +122,15 @@ main>div>p {
     color: #fff;
 }
 
-/* delete this after this exercise */
-.nameInput-container {
+/* Delete this */
+.input-name-container {
     background: #FFF;
-    padding: 10px
+    border-radius: 5px;
+    padding: 10px;
 }
 
-#nameInput {
+.input-name-container input {
     padding: 2px 10px;
+    outline: none;
     font-size: 12px;
-    outline: none
 }
