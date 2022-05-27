@@ -1,29 +1,30 @@
-const input = document.querySelector("#nameInput");
+const inputName = document.querySelector(".input-name-container input");
 
-// Setting
-// element.setAttribute("name", value) // set the value for the attribute
-input.setAttribute("value", "Anbu");
+// Setting the attribute
+// Element.setAttribute("name", "fullName") // set the attribute with value
+inputName.setAttribute("value", "Rajini");
 
-// Getting
-const isAliveDOM = input.getAttribute("is-alive");
-const placeDOM = input.getAttribute("place");
+// // Getting the attribute
+const isAliveDOM = inputName.getAttribute("isAlive");
+const placeDOM = inputName.getAttribute("place");
 
-// Get All attributes (Live Collections)
-console.log(input.attributes.value); // get attribute using property name
-console.log(input.attributes[5], input.attributes[5].value); // get attribute using index
-console.log(input.attributes["is-alive"]); // get attribute using index
+console.log(inputName.attributes); // List all attributes of that element
+console.log(inputName.attributes[6].value); // attributes by index
+console.log(inputName.attributes.place.value); // attributes by property name (DOT Notation)
+console.log(inputName.attributes["interest"].value); // attributes by bracket notation
 console.log(isAliveDOM, placeDOM);
 
-// Methods
-console.log(input.hasAttribute("age")); // checks for existence.
-console.log(input.removeAttribute("is-alive")); // removes the attribute.
-console.log(input.style); // returns CSSStyleDeclaration instead of values.
+// // Methods
+console.log(inputName.hasAttribute("age")); // check for attribute existence
+console.log(inputName.removeAttribute("isAlive")); // remove existing attribute
+console.log(inputName.style); // returns CSSStyleDeclaration instead of values
 
 // data-* attributes
-console.log(input.dataset.spokenLang); // get data-* values like this.
-console.log(input.dataset.working === "true"); // converting string to boolean
+console.log(inputName.dataset["interest"]); // get data-* values like this.
+let workingBoolean = inputName.dataset.working == "true"; // converting string to boolean
+console.log(typeof workingBoolean);
 
 // Task: Display all attributes dynamically.
-// for (let attr of input.attributes) {
-//   console.log(`${attr.name} = ${attr.value}`);
+// for (let attr of inputName.attributes) {
+//   console.log(`${attr.name} is ${attr.value}`);
 // }
