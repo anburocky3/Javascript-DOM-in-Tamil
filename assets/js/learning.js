@@ -1,41 +1,43 @@
-const input = document.querySelector("#nameInput");
+const inputName = document.querySelector(".input-name-container input");
 
 // Get
-console.log(input.className);
-input.className += " newClassName1 newClassName2";
-console.log(input.className);
+console.log(inputName.className);
 
-// To completely overwrite the className
-// input.className = "className";
-// console.log(input.className);
+// To overwrite className
+inputName.setAttribute("class", "newClassName");
+inputName.className += " newClassName2 newClassName3 newClassName4";
 
-// Get class list using el.classList
-console.log(input.classList);
-
-// Loop over all classList
-for (let cssClass of input.classList) {
+// console.log(inputName.classList);
+for (let cssClass of inputName.classList) {
   console.log(cssClass);
 }
 
-// Manipulate ClassList
-input.classList.add("primary", "secondary", "three"); // add class to element
-input.classList.replace("three", "third"); // replace old className with new className
-input.classList.remove("primary", "nameInput"); // remove className by name
-console.log(input.classList.contains("secondary")); // Check if className exist
-input.classList.toggle("toggleClass"); // If the class list doesn’t contain the class name, the toggle() method adds it to the class list.
+// Manipulations
+console.log(inputName.classList.length);
+inputName.classList.add("5class");
+console.log(inputName.classList.contains("class-invalid"));
+console.log(inputName.classList.replace("newClassName4", "newClassName44"));
+inputName.classList.remove("newClassName2");
+console.log(inputName.className);
 
-setTimeout(() => input.classList.toggle("toggleClass"), 2500);
+setTimeout(() => {
+  inputName.classList.toggle("5class");
+}, 5000);
+
+// console.log(inputName.classList);
 
 // Task: Show div based on click (toggle)
-const showBtn = document.getElementById("showBtn");
-const divEl = document.querySelector(".nameInput-container");
+const inputContainer = document.querySelector(".input-name-container");
+const showBtnEl = document.querySelector("#showBtn");
 
-showBtn.addEventListener("click", () => {
-  if (divEl.style.display === "none") {
-    divEl.style.display = "block";
-    showBtn.textContent = "Hide";
+showBtnEl.addEventListener("click", () => {
+  if (inputContainer.style.display === "none") {
+    showBtnEl.innerText = "Hide Div";
+    showBtnEl.style.backgroundColor = "gray";
+    inputContainer.style.display = "block";
   } else {
-    divEl.style.display = "none";
-    showBtn.textContent = "Show";
+    inputContainer.style.display = "none";
+    showBtnEl.style.backgroundColor = "royalblue";
+    showBtnEl.innerText = "Show Div";
   }
 });
