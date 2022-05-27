@@ -1,53 +1,17 @@
-const input = document.querySelector("#nameInput");
-
-// Get
-console.log(input.className);
-input.className += " newClassName1 newClassName2";
-console.log(input.className);
-
-// To completely overwrite the className
-// input.className = "className";
-// console.log(input.className);
-
-// Get class list using el.classList
-console.log(input.classList);
-
-// Loop over all classList
-for (let cssClass of input.classList) {
-  console.log(cssClass);
-}
-
-// Manipulate ClassList
-input.classList.add("primary", "secondary", "three"); // add class to element
-input.classList.replace("three", "third"); // replace old className with new className
-input.classList.remove("primary", "nameInput"); // remove className by name
-console.log(input.classList.contains("secondary")); // Check if className exist
-input.classList.toggle("toggleClass"); // If the class list doesn’t contain the class name, the toggle() method adds it to the class list.
-
-setTimeout(() => input.classList.toggle("toggleClass"), 2500);
-
 // Task: Show div based on click (toggle)
-const showBtn = document.getElementById("showBtn");
-const divEl = document.querySelector(".nameInput-container");
+const inputContainer = document.querySelector(".input-name-container");
+const showBtnEl = document.querySelector("#showBtn");
 
-// showBtn.addEventListener("click", () => {
-//   if (divEl.style.display === "none") {
-//     divEl.style.display = "block";
-//     showBtn.textContent = "Hide";
-//   } else {
-//     divEl.style.display = "none";
-//     showBtn.textContent = "Show";
-//   }
-// });
-
-showBtn.addEventListener("click", () => {
-  if (divEl.classList.contains("hide")) {
-    divEl.classList.remove("hide");
-    showBtn.textContent = "Hide";
-    showBtn.style.background = "#121212";
+showBtnEl.addEventListener("click", () => {
+  if (inputContainer.classList.contains("hide")) {
+    showBtnEl.innerText = "Hide Div";
+    showBtnEl.style.backgroundColor = "gray";
+    // inputContainer.style.display = "block";
+    inputContainer.classList.remove("hide");
   } else {
-    divEl.classList.add("hide");
-    showBtn.textContent = "Show";
-    showBtn.style.background = "royalblue";
+    // inputContainer.style.display = "none";
+    inputContainer.classList.add("hide");
+    showBtnEl.style.backgroundColor = "royalblue";
+    showBtnEl.innerText = "Show Div";
   }
 });
