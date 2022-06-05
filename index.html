@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header>
+    <header onclick="alert('Header Element')">
         🍊 FoodCook Planner
         <button style="padding:2px 10px;font-size:10px;margin-left:10px" id="creditBtn">Credits</button>
     </header>
@@ -35,6 +35,42 @@
                 <div onclick="removeFoodItem(event)"><i class="fa fa-xmark"></i></div>
             </li>
         </ul>
+
+        <!-- Event Capturing & Event Bubbling -->
+        <style>
+            form {
+                background-color: white;
+                padding: 10px;
+            }
+
+            form,
+            form * {
+                margin: 10px;
+                border: 1px solid rgb(46, 88, 213);
+                font-weight: bold;
+            }
+
+            form {
+                background: royalblue;
+            }
+
+            form div {
+                border: 1px solid green;
+                background-color: lightgreen;
+
+            }
+
+            form p {
+                border: 1px solid red;
+                background-color: rosybrown;
+            }
+        </style>
+        <form>FORM
+            <div>DIV
+                <p>P</p>
+            </div>
+        </form>
+        <!-- End -->
     </main>
 
     <script src="./assets/js/main.js"></script>
