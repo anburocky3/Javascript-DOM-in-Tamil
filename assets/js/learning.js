@@ -1,37 +1,23 @@
 const btnEl = document.querySelector("#creditBtn");
 
-console.log(btnEl);
+// const handleCreditEvent = (event) => {
+//   console.log("Some click event is happening", event.target);
 
-// a click on <body> will generate errors,
-// because attributes are always strings, function becomes a string
-document.body.setAttribute("onclick", function () {
-  alert(1);
-});
-
-// Drawback: Don't allows multiple events
-btnEl.onclick = function (event) {
-  // alert("I have been clicked");
-  alert(event.type + " at " + event.currentTarget.innerHTML);
-  alert("Coordinates: " + event.clientX + ":" + event.clientY);
-};
-
-// window.addEventListener("contextmenu", (e) => {
-//   // e.preventDefault();
-//   console.log(e);
-// });
-
-// const handleCreditEvent = function () {
-//   alert("Javascript DOM by Anbuselvan.");
-//   console.log(this);
+//   // Remove the Event Listener
+//   setTimeout(() => {
+//     btnEl.removeEventListener("click", handleCreditEvent);
+//   }, 5000);
 // };
 
-const handleCreditEvent = (event) => {
-  console.log(this); // window object
-  console.log(event.target); // event that is happening
-};
+// // Adding the Event Listener
+// btnEl.addEventListener("click", handleCreditEvent);
 
-btnEl.addEventListener("click", function (event) {
-  alert("Javascript DOM by Anbuselvan.");
-});
+btnEl.addEventListener(
+  "dblclick",
+  () => {
+    console.log("Double-clicked button");
+  },
+  { once: true }
+);
 
-btnEl.addEventListener("contextmenu", handleCreditEvent); //
+// Task: Create a secret button which displays secret key only once.
