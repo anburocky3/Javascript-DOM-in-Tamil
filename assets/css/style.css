@@ -121,27 +121,3 @@ main>div>p {
     cursor: pointer;
     color: #fff;
 }
-
-/* Delete this */
-.input-name-container {
-    background: #FFF;
-    border-radius: 5px;
-    padding: 10px;
-
-    transition: all 1s;
-    width: 100%;
-}
-
-.input-name-container.hide {
-    width: 0;
-    height: 0;
-    opacity: 0;
-    background-color: red;
-    overflow: hidden;
-}
-
-.input-name-style {
-    padding: 2px 10px;
-    outline: none;
-    font-size: 12px;
-}

@@ -13,16 +13,10 @@
 <body>
     <header>
         🍊 FoodCook Planner
+        <button style="padding:2px 10px;font-size:10px;margin-left:10px" id="creditBtn">Credits</button>
     </header>
 
     <main id="main">
-        <!-- <div class="alert">
-            <div class="alert-message">
-                <strong> ✅ Successful!</strong> Food has been updated.
-            </div>
-            <button type="button">x</button>
-        </div> -->
-
         <div class="input-container">
             <input type="text" name="input-food-name" placeholder="I like to eat..." class="input-food" id="input-food">
             <button class="input-button" id="input-btn">Save</button>
@@ -41,16 +35,6 @@
                 <div onclick="removeFoodItem(event)"><i class="fa fa-xmark"></i></div>
             </li>
         </ul>
-
-        <button
-            style="padding: 4px 10px; color:white; background-color:#121212; font-size:10px; border:none;border-radius: 5px; margin: 10px;float: right;"
-            id="showBtn">Hide</button>
-
-        <div class="nameInput-container">
-            <input type="text" id="nameInput" name="name" placeholder="Full Name" class="nameInput" place="Chennai"
-                is-alive="true" data-spoken-lang="Tamil" data-working="true">
-            <button>Submit</button>
-        </div>
     </main>
 
     <script src="./assets/js/main.js"></script>
