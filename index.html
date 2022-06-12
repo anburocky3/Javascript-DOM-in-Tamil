@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <header onclick="alert('Header Element')">
+    <header>
         🍊 FoodCook Planner
-        <button style="padding:2px 10px;font-size:10px;margin-left:10px" id="creditBtn">Credits</button>
+        <a href="./about.html" style="font-size: 10px;">Credits</a>
     </header>
 
     <main id="main">
@@ -36,37 +36,6 @@
             </li>
         </ul>
 
-        <!-- Event Capturing & Event Bubbling -->
-        <style>
-            form {
-                background-color: white;
-                padding: 10px;
-            }
-
-            form input {
-                padding: 5px 10px;
-                outline: none
-            }
-
-            .mt-10 {
-                margin-top: 10px;
-            }
-        </style>
-        <form id="learning">
-            <div class="mt-10">
-                <input type="text" placeholder="Full name" />
-            </div>
-            <div class="mt-10">
-                <label for="terms" style="font-size: 12px;">
-                    <input type="checkbox" id="terms" />
-                    I agree <a href="https://google.com" onclick="return false">terms and conditions</a>
-                </label>
-            </div>
-            <div class="mt-10">
-                <button
-                    style="padding:5px 10px; background-color: royalblue; border:none;color:#FFF;border-radius:5px;">Submit</button>
-            </div>
-        </form>
         <!-- End -->
     </main>
 

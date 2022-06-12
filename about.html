@@ -1,0 +1,87 @@
+<html lang="en">
+
+<head>
+    <title>Authors of FoodCook Planners</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <header onclick="location.href='/index.html'">
+        🍊 FoodCook Planner
+    </header>
+
+    <style>
+        table {
+            margin: 20px auto;
+            border-spacing: 0;
+        }
+
+        tr:first-child {
+            background-color: #1b63ff;
+            color: #FFF
+        }
+
+        th,
+        td {
+            padding: 5px 15px;
+            font-size: 10px;
+            border: 0.5px solid black;
+        }
+
+        table a {
+            font-size: 10px;
+            color: darkblue;
+        }
+
+        tr.active {
+            background-color: lightskyblue;
+        }
+    </style>
+
+    <main id="main">
+        <h4>Authors of FoodCook Planner app</h4>
+        <table id="authors">
+            <tr>
+                <th>Name</th>
+                <th>Github</th>
+                <th>Contact Details</th>
+            </tr>
+            <tr>
+                <td>Anbu</td>
+                <td><a href="#">Github.com</a></td>
+                <td><a href="#">https://fb.me/anburocky3</a></td>
+            </tr>
+            <tr>
+                <td>Trisha</td>
+                <td><a href="#">Github.com</a></td>
+                <td><a href="#">https://fb.me/trisha</a></td>
+            </tr>
+            <tr>
+                <td>Rolex</td>
+                <td><a href="#">Github.com</a></td>
+                <td><a href="#">https://fb.me/rolex</a></td>
+            </tr>
+        </table>
+
+        <!-- Subscription -->
+        <div>
+            <button data-toggle-id="donate-form" style="font-size:10px;padding: 2px 10px;">Support Authors</button>
+            <form id="donate-form" style="margin-top: 10px;" hidden>
+                <span style="font-family: Arial;padding-top:10px">₹</span>
+                <input type="number" placeholder="Enter your amount" min="0" style="font-size:10px;padding: 2px 10px;">
+                <button style="padding: 2px 10px;font-size:10px;">Donate</button>
+            </form>
+        </div>
+    </main>
+
+
+    <!-- For Learning purpose -->
+    <script src="./assets/js/learning.js"></script>
+</body>
+
+</html>
