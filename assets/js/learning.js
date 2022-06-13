@@ -1,23 +1,12 @@
-const btnEl = document.querySelector("#creditBtn");
+const creditBtnEl = document.querySelector("header span");
 
-// const handleCreditEvent = (event) => {
-//   console.log("Some click event is happening", event.target);
+const handleCreditMsg = (event) => {
+  // alert("Javascript DOM - Anbuselvan");
+  console.log("Event Happening");
 
-//   // Remove the Event Listener
-//   setTimeout(() => {
-//     btnEl.removeEventListener("click", handleCreditEvent);
-//   }, 5000);
-// };
+  // removing
+  // creditBtnEl.removeEventListener("click", handleCreditMsg);
+};
 
-// // Adding the Event Listener
-// btnEl.addEventListener("click", handleCreditEvent);
-
-btnEl.addEventListener(
-  "dblclick",
-  () => {
-    console.log("Double-clicked button");
-  },
-  { once: true }
-);
-
-// Task: Create a secret button which displays secret key only once.
+// Adding an EventListener
+creditBtnEl.addEventListener("click", handleCreditMsg, { once: true });
