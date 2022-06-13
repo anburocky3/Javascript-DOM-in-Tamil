@@ -43,26 +43,27 @@
                 padding: 10px;
             }
 
-            form input {
-                padding: 5px 10px;
-                outline: none
+            form * {
+                margin: 5px;
             }
 
-            .mt-10 {
-                margin-top: 10px;
+            form input {
+                padding: 5px 10px;
+                outline: none;
             }
         </style>
-        <form id="learning">
-            <div class="mt-10">
-                <input type="text" placeholder="Full name" />
+        <form>
+            <div>
+                <input type="text" placeholder="Full Name">
             </div>
-            <div class="mt-10">
-                <label for="terms" style="font-size: 12px;">
-                    <input type="checkbox" id="terms" />
-                    I agree <a href="https://google.com" onclick="return false">terms and conditions</a>
+            <div>
+                <label for="terms" style="font-size: 10px;">
+                    <input type="checkbox" id="terms"> I accept the <a href="https://google.com"
+                        onclick="return false">terms and
+                        conditions</a>
                 </label>
             </div>
-            <div class="mt-10">
+            <div>
                 <button
                     style="padding:5px 10px; background-color: royalblue; border:none;color:#FFF;border-radius:5px;">Submit</button>
             </div>
