@@ -1,37 +1,34 @@
-const btnEl = document.querySelector("#creditBtn");
+const creditBtnEl = document.querySelector("header span");
 
-console.log(btnEl);
+// (X) using HTML Attribute
+creditBtnEl.setAttribute(
+  "onclick",
+  'alert("Authored by Anbuselvan - setAttribute")'
+);
 
-// a click on <body> will generate errors,
-// because attributes are always strings, function becomes a string
-document.body.setAttribute("onclick", function () {
-  alert(1);
-});
+// (X) Drawbacks - Can't accept multiple actions
+creditBtnEl.onclick = function () {
+  alert("Authored by Anbuselvan");
+};
 
-// Drawback: Don't allows multiple events
-btnEl.onclick = function (event) {
-  // alert("I have been clicked");
+function handleAuthorInfo() {
+  alert("Authored by Trisha");
+}
+
+creditBtnEl.onclick = handleAuthorInfo();
+
+// Listen for Events using `AddEventListeners`
+// window.addEventListener()
+// document.addEventListener()
+// element.addEventListeners()
+
+const handleCreditMsg = (event) => {
+  alert("Javascript DOM - Anbuselvan");
+  console.log(event.target);
   alert(event.type + " at " + event.currentTarget.innerHTML);
   alert("Coordinates: " + event.clientX + ":" + event.clientY);
 };
 
-// window.addEventListener("contextmenu", (e) => {
-//   // e.preventDefault();
-//   console.log(e);
-// });
+creditBtnEl.addEventListener("click", handleCreditMsg);
 
-// const handleCreditEvent = function () {
-//   alert("Javascript DOM by Anbuselvan.");
-//   console.log(this);
-// };
-
-const handleCreditEvent = (event) => {
-  console.log(this); // window object
-  console.log(event.target); // event that is happening
-};
-
-btnEl.addEventListener("click", function (event) {
-  alert("Javascript DOM by Anbuselvan.");
-});
-
-btnEl.addEventListener("contextmenu", handleCreditEvent); //
+document.addEventListener("contextmenu", handleCreditMsg);
