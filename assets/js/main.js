@@ -2,7 +2,7 @@ let inputFood = document.getElementById("input-food");
 let inputBtn = document.getElementById("input-btn");
 let foodContainer = document.getElementById("food-container");
 
-inputBtn.addEventListener("click", () => {
+const handleInputFood = () => {
   // creating li element
   let newFoodItemEl = document.createElement("li");
 
@@ -24,6 +24,17 @@ inputBtn.addEventListener("click", () => {
 
   // resetting the inputFood value
   inputFood.value = "";
+};
+
+inputBtn.addEventListener("click", handleInputFood);
+
+inputFood.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") {
+    handleInputFood();
+  } else if (event.key === "KeyZ" && (event.ctrlKey || event.metaKey)) {
+    // Undo Operations
+    inputFood.value = "";
+  }
 });
 
 // remove Food items
@@ -32,8 +43,7 @@ function removeFoodItem(event) {
   console.log("logging event", event.target.parentNode.parentNode);
 
   // new way
-  existingList.classList.add("hide");
-  // existingList.remove();
+  existingList.remove();
   // old way
   // existingList.parentNode.removeChild(existingList);
 }

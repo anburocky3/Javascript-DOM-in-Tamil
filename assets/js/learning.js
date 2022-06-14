@@ -1,57 +1,30 @@
-// Mouse Events
-
-// document.addEventListener("mousedown", (event) => {
-//   console.log("Mousedown", event);
+// Keyboard Events
+// document.addEventListener("keydown", (event) => {
+//   console.log("keydown", event);
 // });
 
-// document.addEventListener("mouseup", (event) => {
-//   console.log("MouseUp", event);
-// });
-
-// document.addEventListener("mouseenter", (event) => {
-//   console.log("mouseenter");
-// });
-
-// document.addEventListener("mouseleave", (event) => {
-//   console.log("mouseleave");
-// });
-
-// document.addEventListener("mousemove", (event) => {
-//   console.log("mousemove");
-// });
-
-// document.addEventListener("mouseout", (event) => {
-//   console.log("mouseout");
-// });
-
-// document.addEventListener("mouseover", (event) => {
-//   console.log("mouseover");
-// });
-
-// document.addEventListener("click", (event) => {
-//   console.log("click");
-// });
-
-// document.addEventListener("dblclick", (event) => {
-//   console.log("dblclick");
-// });
-
-//  Task: Create an Mouse Tester app which should display respective message when that button is clicked.
-document.addEventListener("mouseup", (event) => {
-  switch (event.button) {
-    case 1:
-      alert("Left click");
-      break;
-    case 2:
-      alert("Middle Click");
-      break;
-    case 3:
-      alert("Right Click");
-      break;
-    default:
-      alert(
-        "Invalid or unknown click detected! - " + event.which + " is pressed!"
-      );
-      break;
-  }
+document.addEventListener("keyup", (event) => {
+  // console.log(`keyup: key: ${event.key}, code: ${event.code}`);
+  console.log(event);
 });
+
+// Task: Build a simple typing-test screen.
+// document.addEventListener("keyup", (event) => {
+//   switch (event.key) {
+//     case "ArrowUp":
+//       alert("You have pressed ArrowUp Key");
+//       break;
+//     case "ArrowDown":
+//       alert("You have pressed ArrowDown Key");
+//       break;
+//     case "ArrowLeft":
+//       alert("You have pressed ArrowLeft Key");
+//       break;
+//     case "ArrowRight":
+//       alert("You have pressed ArrowRight Key");
+//       break;
+//     default:
+//       alert("Unknown key detected");
+//       break;
+//   }
+// });
