@@ -1,41 +1,57 @@
-const tableEl = document.querySelector("table");
+// Mouse Events
 
-let selectedId;
+// document.addEventListener("mousedown", (event) => {
+//   console.log("Mousedown", event);
+// });
 
-tableEl.addEventListener("click", (event) => {
-  const target = event.target;
-  const closestTr = target.closest("tr");
+// document.addEventListener("mouseup", (event) => {
+//   console.log("MouseUp", event);
+// });
 
-  if (target.tagName === "TH") return; // Ignoring TH element.
+// document.addEventListener("mouseenter", (event) => {
+//   console.log("mouseenter");
+// });
 
-  if (selectedId != undefined) {
-    selectedId.classList.remove("active"); // removing class
+// document.addEventListener("mouseleave", (event) => {
+//   console.log("mouseleave");
+// });
+
+// document.addEventListener("mousemove", (event) => {
+//   console.log("mousemove");
+// });
+
+// document.addEventListener("mouseout", (event) => {
+//   console.log("mouseout");
+// });
+
+// document.addEventListener("mouseover", (event) => {
+//   console.log("mouseover");
+// });
+
+// document.addEventListener("click", (event) => {
+//   console.log("click");
+// });
+
+// document.addEventListener("dblclick", (event) => {
+//   console.log("dblclick");
+// });
+
+//  Task: Create an Mouse Tester app which should display respective message when that button is clicked.
+document.addEventListener("mouseup", (event) => {
+  switch (event.button) {
+    case 1:
+      alert("Left click");
+      break;
+    case 2:
+      alert("Middle Click");
+      break;
+    case 3:
+      alert("Right Click");
+      break;
+    default:
+      alert(
+        "Invalid or unknown click detected! - " + event.which + " is pressed!"
+      );
+      break;
   }
-
-  selectedId = closestTr;
-
-  closestTr.classList.add("active");
-
-  alert(`Hello ${closestTr.children[0].textContent}`);
-});
-
-// Task: Show a donate page based on Toggle
-document.addEventListener("click", (event) => {
-  const id = event.target.dataset.toggleId;
-
-  if (!id) return; // ignore all
-
-  const el = document.getElementById(id);
-
-  el.hidden = !el.hidden;
-});
-
-const formEl = document.querySelector("#donate-form");
-
-formEl.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const donateAmount = event.target.querySelector("input").value;
-
-  alert(`Thank you for donating ₹${donateAmount}.`);
 });
