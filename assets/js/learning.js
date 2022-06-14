@@ -1,44 +1,41 @@
-const tableEl = document.querySelector("table#authors");
+const tableEl = document.querySelector("table");
 
 let selectedId;
 
-function handleTableClick(event) {
+tableEl.addEventListener("click", (event) => {
   const target = event.target;
-  const closestTarget = target.closest("tr");
+  const closestTr = target.closest("tr");
 
-  if (target.tagName == "TH") return; // Ignoring TH tag
+  if (target.tagName === "TH") return; // Ignoring TH element.
 
   if (selectedId != undefined) {
-    selectedId.classList.remove("active");
+    selectedId.classList.remove("active"); // removing class
   }
 
-  selectedId = closestTarget;
+  selectedId = closestTr;
 
-  closestTarget.classList.add("active"); // applying .active class
+  closestTr.classList.add("active");
 
-  console.log(`Hello ${target.textContent}`);
-  // console.log(target.closest("tr").children[0].textContent); // Better approach
-}
+  alert(`Hello ${closestTr.children[0].textContent}`);
+});
 
-tableEl.addEventListener("click", handleTableClick);
+// Task: Show a donate page based on Toggle
+document.addEventListener("click", (event) => {
+  const id = event.target.dataset.toggleId;
 
-// Task: Show a Donate Form on Toggle
-document.addEventListener("click", function (event) {
-  let id = event.target.dataset.toggleId;
+  if (!id) return; // ignore all
 
-  if (!id) return;
-
-  let el = document.getElementById(id);
+  const el = document.getElementById(id);
 
   el.hidden = !el.hidden;
 });
 
-// handling the form
-const formEl = document.querySelector("form");
+const formEl = document.querySelector("#donate-form");
 
 formEl.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const donatedAmount = event.target.querySelector("input").value;
-  alert(`Thank you for donating ₹${donatedAmount}.`);
+  const donateAmount = event.target.querySelector("input").value;
+
+  alert(`Thank you for donating ₹${donateAmount}.`);
 });
