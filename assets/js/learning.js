@@ -1,40 +1,40 @@
 const formEl = document.forms.feedback;
+const nameEl = formEl.name;
+
+// 1. Properties that are useful
+console.log(nameEl);
+
+// 1. Attributes
+nameEl.value = "Anbu";
+console.log(nameEl.value);
+nameEl.disabled = true; // disables input field
+nameEl.readOnly = true;
+
+// 2. Events
+nameEl.addEventListener("focus", () => console.log("focused"));
+nameEl.addEventListener("blur", () => console.log("blur"));
+nameEl.addEventListener("input", () => console.log("input"));
+nameEl.addEventListener("change", () => console.log("change"));
+
+// Other events
+nameEl.addEventListener("cut", () => console.log("cut"));
+nameEl.addEventListener("copy", () => console.log("copy"));
+nameEl.addEventListener("paste", () => console.log("paste"));
+
+// 3. Methods
+nameEl.focus();
+nameEl.blur();
 
 const handleSubmit = (event) => {
   event.preventDefault(); // Prevent default behaviour
 
   const formData = new FormData(event.target);
-
-  // 1. Construct Form into readable form
-  const data = [...formData.entries()];
-  const asString = new URLSearchParams(formData).toString();
-
-  const asJSON = JSON.stringify(Object.fromEntries(formData));
-
-  // 2. Send the formdata to backend
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", "https://reqres.in/api/products/3", true); // API: https://reqres.in/
-  xhr.onload = function () {
-    console.log(xhr.responseText);
-  };
-  xhr.send();
-
-  // Or using fetch/axios
-  fetch("https://reqres.in/api/users", {
-    method: "POST",
-    headers: {
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-      "Content-Type": "application/json",
-    },
-    // body: asJSON,
-  })
-    .then((res) => res.json())
-    .then((res) => {
-      document.querySelector("#responseTxt").innerText = JSON.stringify(res);
-      console.log(res);
-    });
 };
 
 formEl.addEventListener("submit", handleSubmit);
 
-// Task: Create a button and when button clicks, it should get IP address via fetch() using `https://api.ipify.org/?format=json`
+// Task: Create a One-way binding, when the name field changes, it should great like `Hello, {enteredInput} in real time.`
+nameEl.addEventListener("input", (e) => {
+  const nameGreetEl = document.querySelector("#nameGreet");
+  nameGreetEl.innerText = `Hello ${e.target.value}, `;
+});
