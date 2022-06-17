@@ -1,33 +1,15 @@
 const formEl = document.forms.feedback;
-const categoryEl = formEl.category;
-const inputCategories = document.querySelector(".input-categories");
-
-const allCategories = [...categoryEl];
+const termsEl = formEl.elements.terms;
 
 // 1. Properties
-// allCategories.forEach((category) => {
-//   console.log(category.value);
-//   console.log(category.checked);
-// });
+termsEl.checked = true; // set
+termsEl.indeterminate = true; // either
+console.log(termsEl.checked); // get
 
 // 2. Events
-inputCategories.addEventListener("change", (e) => {
-  const checked = allCategories.find((category) => category.checked);
-  console.log(checked);
-  console.log("Selected: ", e.target.value);
+termsEl.addEventListener("change", (e) => {
+  console.log(e.target.checked);
 });
 
 // 3. Methods
-allCategories[2].select();
-allCategories[2].checked = true;
-
-// Task: If contribution radio button clicked, then show an alert message of "Thank you for contributing." after 1 Sec.
-inputCategories.addEventListener("change", (e) => {
-  const checked = allCategories.find((category) => category.checked);
-
-  if (checked.value === "contribution") {
-    setTimeout(() => {
-      alert("Thank you for contributing.");
-    }, 1000);
-  }
-});
+termsEl.select();
