@@ -1,40 +1,33 @@
 const formEl = document.forms.feedback;
-const nameEl = formEl.name;
+const categoryEl = formEl.category;
+const inputCategories = document.querySelector(".input-categories");
 
-// 1. Properties that are useful
-console.log(nameEl);
+const allCategories = [...categoryEl];
 
-// 1. Attributes
-nameEl.value = "Anbu";
-console.log(nameEl.value);
-nameEl.disabled = true; // disables input field
-nameEl.readOnly = true;
+// 1. Properties
+// allCategories.forEach((category) => {
+//   console.log(category.value);
+//   console.log(category.checked);
+// });
 
 // 2. Events
-nameEl.addEventListener("focus", () => console.log("focused"));
-nameEl.addEventListener("blur", () => console.log("blur"));
-nameEl.addEventListener("input", () => console.log("input"));
-nameEl.addEventListener("change", () => console.log("change"));
-
-// Other events
-nameEl.addEventListener("cut", () => console.log("cut"));
-nameEl.addEventListener("copy", () => console.log("copy"));
-nameEl.addEventListener("paste", () => console.log("paste"));
+inputCategories.addEventListener("change", (e) => {
+  const checked = allCategories.find((category) => category.checked);
+  console.log(checked);
+  console.log("Selected: ", e.target.value);
+});
 
 // 3. Methods
-nameEl.focus();
-nameEl.blur();
+allCategories[2].select();
+allCategories[2].checked = true;
 
-const handleSubmit = (event) => {
-  event.preventDefault(); // Prevent default behaviour
+// Task: If contribution radio button clicked, then show an alert message of "Thank you for contributing." after 1 Sec.
+inputCategories.addEventListener("change", (e) => {
+  const checked = allCategories.find((category) => category.checked);
 
-  const formData = new FormData(event.target);
-};
-
-formEl.addEventListener("submit", handleSubmit);
-
-// Task: Create a One-way binding, when the name field changes, it should great like `Hello, {enteredInput} in real time.`
-nameEl.addEventListener("input", (e) => {
-  const nameGreetEl = document.querySelector("#nameGreet");
-  nameGreetEl.innerText = `Hello ${e.target.value}, `;
+  if (checked.value === "contribution") {
+    setTimeout(() => {
+      alert("Thank you for contributing.");
+    }, 1000);
+  }
 });
