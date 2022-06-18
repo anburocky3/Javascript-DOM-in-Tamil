@@ -35,7 +35,8 @@
             }
 
             form input,
-            textarea {
+            textarea,
+            select {
                 padding: 5px 10px;
                 font-size: 10px;
                 border: 1px solid gainsboro;
@@ -50,7 +51,8 @@
                 border-radius: 5px
             }
 
-            form label {
+            form label,
+            form select {
                 display: flex;
                 align-items: center;
                 font-size: 10px;
@@ -86,8 +88,20 @@
                     <label for="contribution">Contribution</label>
                 </div>
             </div>
-            <div>
-                <input type="text" name="email" placeholder="Email address">
+            <div class="d-flex">
+                <div>
+                    <input type="text" name="email" placeholder="Email address">
+                </div>
+                <div>
+                    <select name="country" id="country">
+                        <option value="">--Select-Country--</option>
+                        <option value="IND">India</option>
+                        <option value="LK">SriLanka</option>
+                        <option value="MYS">Malaysia</option>
+                        <option value="SGP">Singapore</option>
+                        <option value="THA">Thailand</option>
+                    </select>
+                </div>
             </div>
             <div>
                 <textarea name="msg" placeholder="Enter the feedback briefly" rows="4"></textarea>
