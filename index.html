@@ -22,20 +22,16 @@
             <input type="text" name="input-food-name" placeholder="I like to eat..." class="input-food" id="input-food">
             <button class="input-button" id="input-btn">Save</button>
         </div>
-        <ul id="food-container" class="food-container">
-            <li class="food-item">
-                <div>Sambar</div>
-                <div onclick="removeFoodItem(event)"><i class="fa fa-xmark"></i></div>
-            </li>
-            <li class="food-item">
-                <div>Rasam</div>
-                <div onclick="removeFoodItem(event)"><i class="fa fa-xmark"></i></div>
-            </li>
-            <li class="food-item">
-                <div>Curd</div>
-                <div onclick="removeFoodItem(event)"><i class="fa fa-xmark"></i></div>
-            </li>
-        </ul>
+        <section>
+            <div id="food-list-statistics"></div>
+            <ul id="food-container" class="food-container">
+            </ul>
+            <div id="no-list">
+                <img src="https://cdni.iconscout.com/illustration/premium/thumb/empty-state-concept-3428212-2902554.png"
+                    alt="">
+                <h6>Create your food list.</h6>
+            </div>
+        </section>
     </main>
 
     <script src="./assets/js/main.js"></script>

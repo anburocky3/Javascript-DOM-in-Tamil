@@ -69,14 +69,17 @@ main>div>p {
     width: 80px;
 }
 
-.food-container {
+section {
     margin: 20px 0;
     background: #fff;
-    list-style: none;
-    padding: 20px;
-    text-align: left;
     border-radius: 5px;
     box-shadow: 5px 5px 10px rgb(231, 231, 231);
+    padding: 20px;
+}
+
+.food-container {
+    list-style: none;
+    text-align: left;
 }
 
 .food-container .food-item {
@@ -120,4 +123,24 @@ main>div>p {
     border: none;
     cursor: pointer;
     color: #fff;
+}
+
+/*  */
+#no-list {
+    font-size: 16px;
+    text-align: center;
+    color: gray;
+}
+
+#no-list img {
+    width: 240px;
+    opacity: 0.5;
+}
+
+/* Statistics */
+#food-list-statistics {
+    font-size: 10px;
+    text-align: left;
+    font-weight: bold;
+    text-transform: uppercase;
 }
