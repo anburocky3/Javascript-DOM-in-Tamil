@@ -1,46 +1,39 @@
 ---
-# try also 'default' to start simple
 theme: default
-title: "JS-DOM Interview Questions"
+title: JS-DOM Interview Questions
 titleTemplate: '%s - CyberDude Networks'
-
-exportFilename: 'Javascript-DOM-Interview-Questions-cyberdude-networks.pdf'
-
-background: https://images.unsplash.com/photo-1618477388954-7852f32655ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format
-# apply any windi css classes to the current slide
-class: 'text-center bg-orange-500'
-# https://sli.dev/custom/highlighters.html
+exportFilename: Javascript-DOM-Interview-Questions-cyberdude-networks.pdf
+class: text-center 
 highlighter: shiki
-# show line numbers in code blocks
 lineNumbers: false
-
-# some information about the slides, markdown enabled
-info: |
+info: >
   ## Javascript DOM Interview Questions
-  Learn Javascript DOM in depth and here are the interview questions. Revalidate yourself. Give your learning a shake.
 
-  Watch Javascript DOM series at [CyberDude YT Channel](https://bit.ly/JS-DOM-Tamil)
-
-favicon: 'https://www.freefavicon.com/freefavicons/software/js-152-272343.png'
+  Learn Javascript DOM in depth and here are the interview questions. Revalidate
+  yourself. Give your learning a shake.
 
 
-# persist drawings in exports and build
+  Watch Javascript DOM series at [CyberDude YT
+  Channel](https://bit.ly/JS-DOM-Tamil)
+favicon: /favicon.png
 drawings:
   persist: false
 ---
 
-# Javascript DOM
 
-Interview Questions with Solution.
+<h1><logos-javascript class="pr-5"/> Javascript DOM </h1>  
 
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
+<p class="text-white">Interview Questions with Solution, available on <span class="text-xs"><a href="https://bit.ly/JS-DOM-Tamil" target="_blank" hover="!text-orange-600">YouTube channel</a></span>.</p>
+
+
+<div class="pt-5">
+  <span @click="$slidev.nav.next" class="px-4 py-1 rounded cursor-pointer bg-orange-700 text-sm" hover="bg-white bg-orange-800">
     Press Space for next page <carbon:arrow-right class="inline"/>
   </span>
 </div>
 
 <div class="abs-br m-6 flex gap-2">
-  <a href="https://www.youtube.com/playlist?list=PL73Obo20O_7jhOOPDASWk0PVcRxGEyrm9" target="_blank" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
+  <a href="https://bit.ly/JS-DOM-Tamil" target="_blank" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-youtube />
   </a>
   <a href="https://github.com/anburocky3/Javascript-DOM-in-Tamil" target="_blank" alt="GitHub"
@@ -48,6 +41,16 @@ Interview Questions with Solution.
     <carbon-logo-github />
   </a>
 </div>
+
+<style>
+.slidev-page-1 {
+  background: linear-gradient(to top, #000000ba, rgba(0, 0, 0, 0.8)), url(/javascript-tamil.png) no-repeat;
+}
+
+h1 {
+  @apply font-black text-orange-500;
+}
+</style>
 
 
 ---

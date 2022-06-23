@@ -10,5 +10,10 @@
     "@slidev/cli": "^0.33.0",
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*"
+  },
+  "devDependencies": {
+    "@iconify-json/logos": "^1.1.5",
+    "@iconify-json/mdi": "^1.1.22",
+    "@iconify-json/uim": "^1.1.1"
   }
 }
