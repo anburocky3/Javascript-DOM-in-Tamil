@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A39</title>
+</head>
+
+<body>
+
+    <form>
+        <h2>User Hobbies</h2>
+        <label for="songs"> <input type="checkbox" id="songs" value="songs"> Songs </label>
+        <label for="memes"> <input type="checkbox" id="memes" value="memes"> Reading Memes </label>
+        <label for="movies"> <input type="checkbox" id="movies" value="movies"> Movies </label>
+        <button>Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script type="text/javascript">
+        const submitBtn = document.querySelector('form button');
+        const result = document.getElementById('result');
+
+        submitBtn.addEventListener('click', sendToBackend);
+
+        function sendToBackend(e) {
+            e.preventDefault();
+            const collectedHobbies = Array.from(document.querySelectorAll('input[type=checkbox]:checked')).map((elem) =>
+                elem
+                .value)
+
+            console.log(`Your Hobbies are: ${collectedHobbies.join(', ')}`);
+
+            result.innerText = `Your Hobbies are: ${collectedHobbies.join(', ')}`
+        }
+    </script>
+</body>
+
+</html>

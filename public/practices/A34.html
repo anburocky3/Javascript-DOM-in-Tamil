@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A34</title>
+</head>
+
+<body>
+
+    <a href="https://google.com">
+        Google.com
+    </a>
+
+    <script type="text/javascript">
+        const aEl = document.getElementsByTagName('a');
+
+        aEl.addEventListener('click', (event) => {
+            event.preventDefault(); // stops the default event, but doesn't stop further propagation
+
+            // doesn't navigate to www.google.com
+        })
+    </script>
+</body>
+
+</html>

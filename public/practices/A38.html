@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A38</title>
+</head>
+
+<body>
+
+    <button type="button">Get My IP</button>
+    <p id="result"></p>
+
+    <script type="text/javascript">
+        const myBtn = document.querySelector('button');
+        const result = document.getElementById('result');
+
+        myBtn.addEventListener('click', getMyData);
+
+        function getMyData() {
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    result.textContent = 'My IP is: ' + data.ip;
+                })
+        }
+    </script>
+</body>
+
+</html>

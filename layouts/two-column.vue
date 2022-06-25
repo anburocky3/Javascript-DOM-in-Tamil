@@ -3,18 +3,21 @@ import { ref, inject } from "vue";
 import { injectionSlidevContext } from "@slidev/client/constants";
 const $slidev = inject(injectionSlidevContext);
 
-const isShown = ref(true);
+const props = withDefaults(
+  defineProps<{
+    video: boolean;
+    class: string;
+  }>(),
+  {
+    video: true,
+  }
+);
+
+const isShown = ref(props.video);
 
 const toggleView = () => {
   isShown.value = !isShown.value;
-  console.log("isShown.value", isShown.value);
 };
-
-const props = defineProps({
-  class: {
-    type: String,
-  },
-});
 </script>
 
 <template>
@@ -23,7 +26,7 @@ const props = defineProps({
       <div :class="props.class">
         <slot />
       </div>
-      <div class="flex justify-center items-center p-10">
+      <div class="flex justify-center items-center px-5">
         <div :class="props.class">
           <slot name="right" />
         </div>

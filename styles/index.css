@@ -15,9 +15,23 @@ ul>li {
 }
 
 blockquote {
-    @apply text-sm pt-5 px-5 bg-stone-800 rounded border-l-5 border-orange-600 leading-8 shadow;
+    @apply text-sm pt-3 px-5 bg-stone-800 rounded border-l-5 border-orange-600 leading-8 shadow;
+
+    p {
+        @apply pb-3
+    }
 }
+
+.two-columns p {
+    @apply pb-0
+}
+
 
 blockquote a {
     @apply text-white text-xs uppercase hover: text-orange-500 font-semibold pl-5;
+}
+
+
+.slidev-layout a {
+    @apply text-orange-500 border-none;
 }
