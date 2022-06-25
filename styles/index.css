@@ -2,6 +2,10 @@ h1 {
     @apply text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-pink-600 text-2xl font-semibold mb-5;
 }
 
+h1 code {
+    @apply text-white;
+}
+
 p {
     @apply pb-5 text-gray-500 text-sm;
 }
@@ -12,4 +16,8 @@ ul>li {
 
 blockquote {
     @apply text-sm pt-5 px-5 bg-stone-800 rounded border-l-5 border-orange-600 leading-8 shadow;
+}
+
+blockquote a {
+    @apply text-white text-xs uppercase hover: text-orange-500 font-semibold pl-5;
 }

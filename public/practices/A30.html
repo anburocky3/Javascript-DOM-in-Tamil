@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A30</title>
+</head>
+
+<body>
+
+    <div id="parent">
+        <div id="sibling-01">Here is sibling-01</div>
+        <div id="sibling-02">Here is sibling-02</div>
+    </div>
+
+    <script type="text/javascript">
+        let firstSibling = document.getElementById('sibling-01')
+        console.log(firstSibling.parentElement); // returns Parent element
+
+        let el = firstSibling.nextElementSibling;
+
+        console.log('Siblings of sibling-01:');
+
+        while (el) {
+            console.log(el.nodeName);
+            el = el.nextElementSibling;
+        }
+    </script>
+</body>
+
+</html>

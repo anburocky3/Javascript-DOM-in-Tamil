@@ -18,28 +18,31 @@ info: >
 favicon: /favicon.png
 drawings:
   persist: false
+
+# global
+github_url: 'https://github.com/anburocky3/Javascript-DOM-in-Tamil'
+video_playlist: 'https://bit.ly/JS-DOM-Tamil'
 ---
 
 
 <h1><logos-javascript class="pr-5"/> Javascript DOM </h1>  
-
-<p class="text-white">Interview Questions with Solution, available on <span class="text-xs"><a href="https://bit.ly/JS-DOM-Tamil" target="_blank" hover="!text-orange-600">YouTube channel</a></span>.</p>
+<p class="text-white">Interview Questions with Solution, available on <span class="text-xs"><a :href="$slidev.configs.video_playlist" target="_blank" hover="!text-orange-600">YouTube channel</a></span>.</p>
 
 
 <div class="pt-5">
-  <span @click="$slidev.nav.next" class="px-4 py-1 rounded cursor-pointer bg-orange-700 text-sm" hover="bg-white bg-orange-800">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
+<span @click="$slidev.nav.next" class="px-4 py-1 rounded cursor-pointer bg-orange-700 text-sm" hover="bg-white bg-orange-800">
+Press Space for next page <carbon:arrow-right class="inline"/>
+</span>
 </div>
 
 <div class="abs-br m-6 flex gap-2">
-  <a href="https://bit.ly/JS-DOM-Tamil" target="_blank" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-youtube />
-  </a>
-  <a href="https://github.com/anburocky3/Javascript-DOM-in-Tamil" target="_blank" alt="GitHub"
-    class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
+<a :href="$slidev.configs.video_playlist" target="_blank" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
+<carbon-logo-youtube />
+</a>
+<a :href="$slidev.configs.github" target="_blank" alt="GitHub"
+class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
+<carbon-logo-github />
+</a>
 </div>
 
 <style>
@@ -222,15 +225,15 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
 
 |     |     |
 | --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
+| <kbd>right</kbd> / <kbd>space</kbd> | next animation or slide |
+| <kbd>left</kbd> / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
 | <kbd>up</kbd> | previous slide |
 | <kbd>down</kbd> | next slide |
 
-<!-- https://sli.dev/guide/animations.html#click-animations -->
+< !--https://sli.dev/guide/animations.html#click-animations -->
 <img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
+v-click
+class="absolute -bottom-9 -left-7 w-80 opacity-50"
   src="https://sli.dev/assets/arrow-bottom-left.svg"
 />
 <p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>

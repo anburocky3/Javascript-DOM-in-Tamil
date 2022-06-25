@@ -1,12 +1,20 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, inject, useSlots, onMounted } from "vue";
+import { injectionSlidevContext } from "@slidev/client/constants";
+const $slidev = inject(injectionSlidevContext);
 
-const isShown = ref(true);
+const props = withDefaults(
+  defineProps<{
+    video: boolean;
+  }>(),
+  {
+    video: true,
+  }
+);
 
-const toggleView = () => {
-  isShown.value = !isShown.value;
-  console.log("isShown.value", isShown.value);
-};
+const isShown = ref(props.video);
+
+const toggleView = () => (isShown.value = !isShown.value);
 </script>
 
 <template>
@@ -20,18 +28,18 @@ const toggleView = () => {
           class="px-4 py-2 bg-indigo-500 rounded font-black text-sm self-start shadow"
           title="You are doing a great job!"
         >
-          Q({{ $slidev.nav.currentPage - 1 }} / {{ $slidev.nav.total }})
+          Q({{ $slidev?.nav.currentPage - 1 }} / {{ $slidev?.nav.total }})
         </div>
         <div class="m-0 flex gap-4 mt-2 ml-3">
           <a
-            href="https://bit.ly/JS-DOM-Tamil"
+            :href="$slidev?.configs.video_playlist"
             target="_blank"
             class="text-xl hover:text-orange-500 shadow"
           >
             <carbon-logo-youtube />
           </a>
           <a
-            href="https://github.com/anburocky3/Javascript-DOM-in-Tamil"
+            :href="$slidev?.configs.github"
             target="_blank"
             alt="GitHub"
             class="text-xl hover:text-orange-500 shadow"
@@ -41,7 +49,6 @@ const toggleView = () => {
         </div>
       </div>
     </div>
-
     <div class="absolute bottom-10 right-10">
       <div
         class="text-xs uppercase border-2 border-orange-600 rounded"
