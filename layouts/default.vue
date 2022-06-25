@@ -28,7 +28,7 @@ const toggleView = () => (isShown.value = !isShown.value);
           class="px-4 py-2 bg-indigo-500 rounded font-black text-sm self-start shadow"
           title="You are doing a great job!"
         >
-          Q({{ $slidev?.nav.currentPage - 1 }} / {{ $slidev?.nav.total - 1 }})
+          Q({{ $slidev?.nav.currentPage - 1 }} / {{ $slidev?.nav.total - 2 }})
         </div>
         <div class="m-0 flex gap-4 mt-2 ml-3">
           <a

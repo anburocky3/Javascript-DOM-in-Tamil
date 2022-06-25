@@ -215,3 +215,24 @@ src: ./questions/Q39.md
 ---
 src: ./questions/Q40.md
 ---
+
+---
+layout: image-right
+image: https://source.unsplash.com/collection/94734566/1920x1080
+---
+
+# What's next?
+
+Great, there is still a lot more to learn.
+
+- [thatjsdude.com Interview Questions](https://www.thatjsdude.com/interview/dom.html)
+- [gitconnected.com Interview Questions](https://levelup.gitconnected.com/javascript-interview-questions-basic-dom-and-events-7925ce8602ef)
+- [wisdomjobs Interview Questions](https://www.wisdomjobs.com/e-university/html-dom-interview-questions.html)
+- [sevenmentor Interview Questions](https://www.sevenmentor.com/html-document-object-modeldominterview-questions-and-answers)
+- [interviewgig.com Interview Questions](https://www.interviewgig.com/html-dom-interview-questions-and-answers/z)
+
+<div class="my-10">
+  <a :href="$slidev.configs.video_playlist" class="bg-gray-900 px-4 py-5 text-xs shadow rounded !text-gray-500">
+    <mdi-video class="mr-2" /> Watch <span class="font-semibold text-orange-500">Javascript DOM in Tamil</span> on CyberDude YT.
+  </a>
+</div>
