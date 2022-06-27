@@ -68,7 +68,7 @@
 
         <form name="feedback">
             <div class="fullName">
-                <input type="text" name="fullName" placeholder="Enter your Full Name">
+                <input type="text" name="fullName" placeholder="Enter your Full Name" required>
             </div>
             <div class="d-flex">
                 <div class="d-flex">
@@ -85,14 +85,14 @@
                 </div>
             </div>
             <div>
-                <input type="email" name="email" placeholder="you@awesome.com">
+                <input type="email" name="email" placeholder="you@awesome.com" required>
             </div>
             <div>
-                <textarea name="description" placeholder="Enter your feedback briefly!" rows="4"></textarea>
+                <textarea name="description" placeholder="Enter your feedback briefly!" rows="4" required></textarea>
             </div>
             <div>
                 <label for="terms">
-                    <input type="checkbox" name="terms" id="terms" />
+                    <input type="checkbox" name="terms" id="terms" value="true" required />
                     I accept terms and conditions.
                 </label>
             </div>
