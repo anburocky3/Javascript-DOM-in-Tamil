@@ -6,29 +6,31 @@ const handleSubmit = (event) => {
 
   const formData = new FormData(formEl);
 
-  // 1. QueryString: content-type: application/x-www-form-urlencoded
-  // ?fullName=Tana+Stark&type=technical-support&email=wukoma%40mailinator.com&description=Doloremque+excepteur&terms=true
-  const data = [...formData.entries()];
-
-  const dataString = data
-    // .map((x) => `${encodeURIComponent(x[0])}=${encodeURIComponent(x[1])}`)
-    .map(
-      ([key, value]) =>
-        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
-    )
-    .join("&"); // old way of doing
-
-  console.log("usingMap", dataString); //
-
-  const dataString2 = new URLSearchParams(formData).toString();
-
-  console.log("URLSearchParams", dataString2);
-
-  // 2. JSON
   const jsonData = JSON.stringify(Object.fromEntries(formData));
 
   // Send to Backend
-  console.log("JSON BODY", jsonData);
+  // 1. XMLHttpRequest
+  let xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://reqres.in/api/users/2", true);
+  xhr.onload = function () {
+    const obj = JSON.parse(xhr.responseText);
+    document.getElementById("response").innerText = obj.data.first_name;
+  };
+  xhr.send();
+
+  // 2. fetch(), axios()
+  fetch("https://reqres.in/api/users?page=2", {
+    method: "GET",
+    // headers: {
+    //   // 'Content-Type': 'application/x-www-form-urlencoded' // MIME
+    //   "Content-Type": "application/json", // MIME
+    // },
+    // body: jsonData,
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      document.getElementById("response").innerText = JSON.stringify(data.data);
+    });
 };
 
 formEl.addEventListener("submit", handleSubmit);
