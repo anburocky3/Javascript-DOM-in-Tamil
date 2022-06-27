@@ -25,7 +25,7 @@ const toggleView = () => (isShown.value = !isShown.value);
       </div>
       <div>
         <div
-          class="px-4 py-2 bg-indigo-500 rounded font-black text-sm self-start shadow"
+          class="px-4 py-2 bg-indigo-500 rounded font-black text-sm self-start shadow text-white"
           title="You are doing a great job!"
         >
           Q({{ $slidev?.nav.currentPage - 1 }} / {{ $slidev?.nav.total - 2 }})
@@ -34,7 +34,7 @@ const toggleView = () => (isShown.value = !isShown.value);
           <a
             :href="$slidev?.configs.video_playlist"
             target="_blank"
-            class="text-xl hover:text-orange-500 shadow"
+            class="text-xl hover:text-orange-500 dark:shadow"
           >
             <carbon-logo-youtube />
           </a>
@@ -42,7 +42,7 @@ const toggleView = () => (isShown.value = !isShown.value);
             :href="$slidev?.configs.github"
             target="_blank"
             alt="GitHub"
-            class="text-xl hover:text-orange-500 shadow"
+            class="text-xl hover:text-orange-500 dark:shadow"
           >
             <carbon-logo-github />
           </a>

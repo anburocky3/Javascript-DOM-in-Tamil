@@ -3,7 +3,7 @@ h1 {
 }
 
 h1 code {
-    @apply text-white;
+    @apply text-black dark: text-white;
 }
 
 p {
@@ -34,4 +34,8 @@ blockquote a {
 
 .slidev-layout a {
     @apply text-orange-500 border-none;
+}
+
+.highlight {
+    @apply text-black dark: text-white;
 }

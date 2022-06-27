@@ -232,7 +232,7 @@ Great, there is still a lot more to learn.
 - [interviewgig.com Interview Questions](https://www.interviewgig.com/html-dom-interview-questions-and-answers/z)
 
 <div class="my-10">
-  <a :href="$slidev.configs.video_playlist" class="bg-gray-900 px-4 py-5 text-xs shadow rounded !text-gray-500">
+  <a :href="$slidev.configs.video_playlist" class="bg-slate-100 dark:bg-gray-900 px-4 py-5 text-xs dark:shadow rounded !text-gray-500">
     <mdi-video class="mr-2" /> Watch <span class="font-semibold text-orange-500">Javascript DOM in Tamil</span> on CyberDude YT.
   </a>
 </div>
