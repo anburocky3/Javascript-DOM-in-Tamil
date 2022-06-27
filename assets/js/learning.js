@@ -1,30 +1,17 @@
-// Keyboard Events
-// document.addEventListener("keydown", (event) => {
-//   console.log("keydown", event);
-// });
+// const formEl = document.forms[0]; // by Index
+const formEl = document.forms.feedback; // by name
 
-document.addEventListener("keyup", (event) => {
-  // console.log(`keyup: key: ${event.key}, code: ${event.code}`);
-  console.log(event);
-});
+// Get Elements from Form
+// const fullNameEl = formEl.elements[0]; // or by index/bracket notation
+const fullNameEl = formEl.elements.fullName; // or by index/bracket notation
+const typeEl = formEl.elements.type;
+const emailEl = formEl.elements.email;
+const descEl = formEl.elements.description;
+const termsEl = formEl.elements.terms;
 
-// Task: Build a simple typing-test screen.
-// document.addEventListener("keyup", (event) => {
-//   switch (event.key) {
-//     case "ArrowUp":
-//       alert("You have pressed ArrowUp Key");
-//       break;
-//     case "ArrowDown":
-//       alert("You have pressed ArrowDown Key");
-//       break;
-//     case "ArrowLeft":
-//       alert("You have pressed ArrowLeft Key");
-//       break;
-//     case "ArrowRight":
-//       alert("You have pressed ArrowRight Key");
-//       break;
-//     default:
-//       alert("Unknown key detected");
-//       break;
-//   }
-// });
+// const fullNameEl = formEl.fullName; // you can also do this.
+
+// Object Destructing
+const { fullName, type, email, desc, terms } = formEl.elements;
+
+console.log(fullName, type, email, desc, terms);

@@ -1,0 +1,109 @@
+<html lang="en">
+
+<head>
+    <title>Feedback - FoodCook Planner </title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        🍊 FoodCook Planner
+        <a href="./index.html" style="padding:2px 10px;font-size:10px;">Back</a>
+    </header>
+
+    <main>
+        <h4>Feedback Form</h4>
+
+        <style>
+            form {
+                margin-top: 20px;
+                background-color: #FFF;
+                padding: 20px;
+                border-radius: 5px;
+            }
+
+            form * {
+                margin: 5px;
+                width: 100%;
+            }
+
+            form input,
+            textarea {
+                padding: 5px 10px;
+                font-size: 10px;
+                border: 1px solid gainsboro;
+                border-radius: 5px;
+            }
+
+            form button {
+                padding: 5px 10px;
+                background-color: royalblue;
+                border: none;
+                color: #FFF;
+                border-radius: 5px
+            }
+
+            form label {
+                display: flex;
+                align-items: center;
+                font-size: 10px;
+                color: gray;
+                user-select: none;
+            }
+
+            form label input,
+            form input[type='radio'] {
+                width: auto;
+            }
+
+            .d-flex {
+                display: flex;
+            }
+        </style>
+
+        <form name="feedback">
+            <div class="fullName">
+                <input type="text" name="fullName" placeholder="Enter your Full Name">
+            </div>
+            <div class="d-flex">
+                <div class="d-flex">
+                    <input type="radio" name="type" id="general-feedback" value="general-feedback">
+                    <label for="general-feedback">General Feedback</label>
+                </div>
+                <div class="d-flex">
+                    <input type="radio" name="type" id="technical-support" value="technical-support">
+                    <label for="technical-support">Technical Support</label>
+                </div>
+                <div class="d-flex">
+                    <input type="radio" name="type" id="contribution" value="contribution">
+                    <label for="contribution">Contribution</label>
+                </div>
+            </div>
+            <div>
+                <input type="email" name="email" placeholder="you@awesome.com">
+            </div>
+            <div>
+                <textarea name="description" placeholder="Enter your feedback briefly!" rows="4"></textarea>
+            </div>
+            <div>
+                <label for="terms">
+                    <input type="checkbox" name="terms" id="terms" />
+                    I accept terms and conditions.
+                </label>
+            </div>
+            <div>
+                <button>Submit</button>
+            </div>
+        </form>
+    </main>
+
+    <!-- For Learning purpose -->
+    <script src="./assets/js/learning.js"></script>
+</body>
+
+</html>
