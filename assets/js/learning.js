@@ -2,33 +2,33 @@ const formEl = document.forms.feedback;
 const btnEl = document.querySelector("form button");
 
 const handleSubmit = (event) => {
-  event.preventDefault(); // Prevent default behaviour
+  event.preventDefault();
 
-  // construct a FormData object, which fires the formdata event
   const formData = new FormData(formEl);
 
-  // formdata gets modified by the formdata event
-  console.log("My API KEY IS: ", formData.get("api-key"));
-};
+  // 1. QueryString: content-type: application/x-www-form-urlencoded
+  // ?fullName=Tana+Stark&type=technical-support&email=wukoma%40mailinator.com&description=Doloremque+excepteur&terms=true
+  const data = [...formData.entries()];
 
-const handleFormData = (e) => {
-  console.log("formdata fired!");
+  const dataString = data
+    // .map((x) => `${encodeURIComponent(x[0])}=${encodeURIComponent(x[1])}`)
+    .map(
+      ([key, value]) =>
+        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+    )
+    .join("&"); // old way of doing
 
-  const formData = e.formData;
+  console.log("usingMap", dataString); //
 
-  // useful methods
-  formData.append("api-key", "sadsadsadsadsadsa"); // append new key-value pairs
-  console.log([...formData.entries()]); // get entries
-  console.log([...formData.values()]); // get only values
-  console.log(formData.get("email")); // get individual form element's value
-  console.log(formData.getAll("type")); // returns an array of all the values by a key name
-  console.log(formData.has("gender")); // returns true if the FormData object contains a key name.
-  console.log([...formData.keys()]); // returns an iterator of all the keys.
-  formData.set("hobbies", "Learning new things"); //sets a new value for an existing key name
-  formData.delete("terms"); // deletes the key
-  console.log([...formData.values()]); //returns an iterator of all the values in the FormData object.
+  const dataString2 = new URLSearchParams(formData).toString();
+
+  console.log("URLSearchParams", dataString2);
+
+  // 2. JSON
+  const jsonData = JSON.stringify(Object.fromEntries(formData));
+
+  // Send to Backend
+  console.log("JSON BODY", jsonData);
 };
 
 formEl.addEventListener("submit", handleSubmit);
-
-formEl.addEventListener("formdata", handleFormData);
