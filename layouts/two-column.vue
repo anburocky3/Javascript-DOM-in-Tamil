@@ -36,7 +36,7 @@ const toggleView = () => {
       class="absolute bottom-3 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
     >
       <div
-        class="px-4 py-2 bg-indigo-500 rounded font-black text-sm self-start shadow"
+        class="px-4 py-2 text-white bg-indigo-500 rounded font-black text-sm self-start shadow"
         title="You are doing a great job!"
       >
         Q({{ $slidev.nav.currentPage - 1 }} / {{ $slidev.nav.total }})
@@ -59,7 +59,7 @@ const toggleView = () => {
         <slot name="refvideo" />
       </div>
       <div
-        class="w-12 h-12 bg-orange-500 rounded-full p-2 flex justify-center items-center cursor-pointer hover:pointer"
+        class="w-12 h-12 bg-orange-500 rounded-full p-2 flex justify-center items-center cursor-pointer hover:pointer text-white"
         @click="toggleView"
         v-else
       >

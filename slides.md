@@ -25,24 +25,28 @@ video_playlist: 'https://bit.ly/JS-DOM-Tamil'
 ---
 
 
-<h1><logos-javascript class="pr-5"/> Javascript DOM </h1>  
-<p class="text-white">Interview Questions with Solution, available on <span class="text-xs"><a :href="$slidev.configs.video_playlist" target="_blank" hover="!text-orange-600">YouTube channel</a></span>.</p>
+<h1  v-motion
+  :initial="{ x: -180 }"
+  :enter="{ x: 0 }"><logos-javascript class="pr-5"/> Javascript DOM </h1>  
+<p class="text-white" v-motion-fade>Interview Questions with Solution, available on <span class="text-xs"><a :href="$slidev.configs.video_playlist" target="_blank" hover="!text-orange-600">YouTube channel</a></span>.</p>
 
 
-<div class="pt-5">
-<span @click="$slidev.nav.next" class="px-4 py-1 rounded cursor-pointer bg-orange-700 text-sm" hover="bg-white bg-orange-800">
-Press Space for next page <carbon:arrow-right class="inline"/>
-</span>
+<div class="pt-5" v-motion
+  :initial="{ x: 180 }"
+  :enter="{ x: 0 }">
+  <span @click="$slidev.nav.next" class="px-4 py-1 rounded cursor-pointer bg-orange-700 text-sm text-white" hover="shadow bg-orange-600"  >
+  Press Space for next page <carbon:arrow-right class="inline"/>
+  </span>
 </div>
 
 <div class="abs-br m-6 flex gap-2">
-<a :href="$slidev.configs.video_playlist" target="_blank" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-<carbon-logo-youtube />
-</a>
-<a :href="$slidev.configs.github" target="_blank" alt="GitHub"
-class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-<carbon-logo-github />
-</a>
+  <a :href="$slidev.configs.video_playlist" target="_blank" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
+  <carbon-logo-youtube />
+  </a>
+  <a :href="$slidev.configs.github" target="_blank" alt="GitHub"
+  class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
+  <carbon-logo-github />
+  </a>
 </div>
 
 <style>

@@ -11,11 +11,11 @@ p {
 }
 
 ul>li {
-    @apply leading-relaxed pb-4 list-disc ml-10 pr-5;
+    @apply leading-relaxed pb-4 list-disc ml-10 pr-5 text-sm;
 }
 
 blockquote {
-    @apply text-sm pt-3 px-5 bg-stone-800 rounded border-l-5 border-orange-600 leading-8 shadow;
+    @apply text-sm pt-3 px-5 bg-stone-200 dark: bg-stone-800 rounded border-l-5 border-orange-600 leading-8 shadow;
 
     p {
         @apply pb-3
@@ -28,7 +28,7 @@ blockquote {
 
 
 blockquote a {
-    @apply text-white text-xs uppercase hover: text-orange-500 font-semibold pl-5;
+    @apply text-orange-500 dark: text-white text-xs uppercase hover: text-orange-500 font-semibold pl-5;
 }
 
 
@@ -38,4 +38,8 @@ blockquote a {
 
 .highlight {
     @apply text-black dark: text-white;
+}
+
+.slidev-layout blockquote {
+    @apply text-sm py-2 px-5 bg-stone-200 dark: bg-stone-800 rounded border-l-5 border-orange-600 shadow;
 }

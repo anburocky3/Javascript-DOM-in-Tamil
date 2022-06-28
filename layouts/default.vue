@@ -5,7 +5,8 @@ const $slidev = inject(injectionSlidevContext);
 
 const props = withDefaults(
   defineProps<{
-    video: boolean;
+    video?: boolean;
+    videoUrl?: string;
   }>(),
   {
     video: true,
@@ -15,6 +16,10 @@ const props = withDefaults(
 const isShown = ref(props.video);
 
 const toggleView = () => (isShown.value = !isShown.value);
+
+const videoLoaded = () => {
+  console.log("video is loaded");
+};
 </script>
 
 <template>
@@ -52,7 +57,7 @@ const toggleView = () => (isShown.value = !isShown.value);
     <div class="absolute bottom-10 right-10">
       <div
         class="text-xs uppercase border-2 border-orange-600 rounded"
-        v-if="$slots.refvideo && isShown"
+        v-if="videoUrl && isShown"
       >
         <div
           class="flex justify-between bg-orange-600 text-white px-4 py-1 text-xs"
@@ -63,10 +68,10 @@ const toggleView = () => (isShown.value = !isShown.value);
             class="cursor-pointer hover:shadow"
           />
         </div>
-        <slot name="refvideo" />
+        <iframe :src="videoUrl" @load="videoLoaded" allowfullscreen></iframe>
       </div>
       <div
-        class="w-12 h-12 bg-orange-500 rounded-full p-2 flex justify-center items-center cursor-pointer hover:pointer"
+        class="w-12 h-12 bg-orange-500 rounded-full p-2 flex justify-center items-center cursor-pointer hover:pointer text-white"
         @click="toggleView"
         v-else
       >
