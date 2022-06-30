@@ -1,32 +1,22 @@
 const formEl = document.forms.feedback;
-const categoryEl = formEl.elements.type;
-
-const inputCategory = document.querySelector("#input-categories");
-
-const allCategories = [...categoryEl];
+const termsEl = formEl.elements.terms;
 
 // Get Properties & Methods
-console.log(categoryEl);
-console.log(allCategories);
+// console.log(termsEl);
 
 // 1. Attributes
-allCategories.forEach((category) => {
-  console.log(category.value);
-  console.log(category.checked);
-});
+// termsEl.checked = true;
+// termsEl.indeterminate = true;
+// console.log(termsEl.value);
 
 // 2. Events
-inputCategory.addEventListener("change", (event) => {
-  const checked = allCategories.find((category) => {
-    return category.checked;
-  });
-  console.log("Selected: ", checked.value);
-  console.log("Simple: ", event.target.value);
-});
+// termsEl.addEventListener("change", (event) => {
+//   console.log(event.target.checked);
+// });
 
 // 3. Methods
-allCategories[1].select();
-allCategories[2].checked = true;
+// termsEl.select();
+// termsEl.checked = true;
 
 const handleSubmit = (event) => {
   event.preventDefault();
@@ -36,15 +26,13 @@ const handleSubmit = (event) => {
 
 formEl.addEventListener("submit", handleSubmit);
 
-// Task:  If contribution radio button clicked, then show an alert message of "Thank you for contributing." after 1 Sec.
+// Task: Show alert on click and display some contents, and if i click ok, it should check, if not it should not check.
+termsEl.addEventListener("click", (e) => {
+  if (e.target.checked) {
+    let confirmation = confirm("Here are some terms, do you accept?");
 
-inputCategory.addEventListener("change", (event) => {
-  const checked = allCategories.find((category) => category.checked);
-  // const checked = event.target;
-
-  if (checked.value === "contribution") {
-    setTimeout(() => {
-      alert("Thank you for contributing!");
-    }, 1000);
+    if (!confirmation) {
+      e.preventDefault();
+    }
   }
 });
