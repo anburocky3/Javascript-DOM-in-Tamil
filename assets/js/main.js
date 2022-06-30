@@ -4,6 +4,37 @@ let foodContainer = document.getElementById("food-container");
 let noListEl = document.getElementById("no-list");
 const foodListStatistics = document.getElementById("food-list-statistics");
 
+const localStorageKey = "foodItems";
+
+document.addEventListener("DOMContentLoaded", () => {
+  // localStorage fetch, draw ui.
+  const fetchedFoodItems = [
+    ...JSON.parse(localStorage.getItem(localStorageKey)),
+  ];
+
+  fetchedFoodItems.forEach((item) => {
+    let newFoodItemEl = document.createElement("li");
+
+    let div = document.createElement("div"); //for list-item
+    let divBtn = document.createElement("div");
+
+    newFoodItemEl.append(div, divBtn);
+
+    // assigning textContent & className to newFoodItemEl
+    div.textContent = item.foodItem;
+    newFoodItemEl.className = "food-item";
+
+    divBtn.parentElement.setAttribute("onClick", "removeFoodItem(event)");
+    divBtn.innerHTML = `<i class="fa fa-xmark"></i>`;
+    newFoodItemEl.append(divBtn);
+
+    // appending newly created element(newFoodItemEl) to foodContainer
+    foodContainer.append(newFoodItemEl);
+  });
+
+  refreshUI();
+});
+
 const handleInputFood = () => {
   // creating li element
   let newFoodItemEl = document.createElement("li");
@@ -23,6 +54,15 @@ const handleInputFood = () => {
 
   // appending newly created element(newFoodItemEl) to foodContainer
   foodContainer.append(newFoodItemEl);
+
+  // set localStorage
+  localStorage.setItem(
+    localStorageKey,
+    JSON.stringify([
+      ...JSON.parse(localStorage.getItem(localStorageKey) || "[]"),
+      { foodItem: inputFood.value },
+    ])
+  );
 
   // resetting the inputFood value
   inputFood.value = "";
@@ -45,6 +85,20 @@ inputFood.addEventListener("keyup", (event) => {
 function removeFoodItem(event) {
   const existingList = event.target.parentNode.parentNode;
   existingList.remove();
+
+  // remove from localStorage
+  const fetchedFoodItems = [
+    ...JSON.parse(localStorage.getItem(localStorageKey)),
+  ];
+
+  fetchedFoodItems.forEach((item) => {
+    if (item.foodItem === existingList.innerText) {
+      fetchedFoodItems.splice(fetchedFoodItems.indexOf(item), 1);
+      // remove from localStorage
+    }
+  });
+
+  localStorage.setItem(localStorageKey, JSON.stringify(fetchedFoodItems));
 
   refreshUI();
 }
