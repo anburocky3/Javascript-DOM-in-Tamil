@@ -1,6 +1,8 @@
 let inputFood = document.getElementById("input-food");
 let inputBtn = document.getElementById("input-btn");
 let foodContainer = document.getElementById("food-container");
+let noListEl = document.getElementById("no-list");
+const foodListStatistics = document.getElementById("food-list-statistics");
 
 const handleInputFood = () => {
   // creating li element
@@ -24,6 +26,8 @@ const handleInputFood = () => {
 
   // resetting the inputFood value
   inputFood.value = "";
+
+  refreshUI();
 };
 
 inputBtn.addEventListener("click", handleInputFood);
@@ -40,10 +44,24 @@ inputFood.addEventListener("keyup", (event) => {
 // remove Food items
 function removeFoodItem(event) {
   const existingList = event.target.parentNode.parentNode;
-  console.log("logging event", event.target.parentNode.parentNode);
-
-  // new way
   existingList.remove();
-  // old way
-  // existingList.parentNode.removeChild(existingList);
+
+  refreshUI();
+}
+
+function refreshUI() {
+  foodListStatistics.innerText = `You have ${foodContainer.children.length} lists`;
+
+  // if (foodContainer.children.length > 0) {
+  //   //  children exist, so don't show `no-list` div
+  //   noListEl.hidden = true;
+  // } else {
+  //   // children not exist, show `no-list` div
+  //   noListEl.hidden = false;
+  // }
+
+  // You can write better!
+  foodContainer.children.length > 0
+    ? ((noListEl.hidden = true), (foodListStatistics.hidden = false))
+    : ((noListEl.hidden = false), (foodListStatistics.hidden = true));
 }
