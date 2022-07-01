@@ -16,6 +16,7 @@ info: >
   Watch Javascript DOM series at [CyberDude YT
   Channel](https://bit.ly/JS-DOM-Tamil)
 favicon: /favicon.png
+selectable: true
 drawings:
   persist: false
 
