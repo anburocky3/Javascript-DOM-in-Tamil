@@ -43,3 +43,7 @@ blockquote a {
 .slidev-layout blockquote {
     @apply text-sm py-2 px-5 bg-stone-200 dark: bg-stone-800 rounded border-l-5 border-orange-600 shadow;
 }
+
+.slidev-code {
+    user-select: text;
+}
