@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A32</title>
+</head>
+
+<body>
+
+    <div id='grandparent'>
+        <div id='parent'>
+            <button id='start'>
+                Start
+            </button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        const start = document.querySelector('#start');
+        const parent = document.querySelector('#parent');
+        const grandparent = document.querySelector('#grandparent');
+        start.addEventListener('click', () => {
+            alert('Bubbling: start clicked');
+        })
+        parent.addEventListener('click', () => {
+            alert('Bubbling: parent clicked');
+        })
+        grandparent.addEventListener('click', () => {
+            alert('Bubbling: grandparent clicked');
+        })
+        document.addEventListener('click', () => {
+            alert('Bubbling: document clicked');
+        })
+        window.addEventListener('click', () => {
+            alert('Bubbling: window clicked');
+        })
+
+        // Capturing
+        start.addEventListener('click', () => {
+            alert('capture: start clicked');
+        }, true)
+        parent.addEventListener('click', () => {
+            alert('capture: parent clicked');
+        }, true)
+        grandparent.addEventListener('click', () => {
+            alert('capture: grandparent clicked');
+        }, true)
+        document.addEventListener('click', () => {
+            alert('capture: document clicked');
+        }, true)
+        window.addEventListener('click', () => {
+            alert('capture: window clicked');
+        }, true)
+    </script>
+</body>
+
+</html>

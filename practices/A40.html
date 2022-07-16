@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A40</title>
+</head>
+
+<body>
+
+    <form name="signup">
+        <h2>Sign Up</h2>
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="number" name="phone" placeholder="Phone Number" required>
+        <button>Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script type="text/javascript">
+        const formEl = document.forms.signup;
+        const name = formEl.name
+        const email = formEl.email
+        const phone = formEl.phone
+
+        formEl.addEventListener('submit', sendToBackend);
+
+        function sendToBackend(e) {
+            e.preventDefault();
+
+            if (validateForm()) {
+                const formData = new FormData(e.target);
+                const formProps = Object.fromEntries(formData);
+                console.log(formProps);
+            }
+        }
+
+        const validateForm = () => {
+            if (name.value == "" || name.value.length <= 3 || name.value.length >= 20) {
+                alert("Please enter your name properly.");
+                name.focus();
+                return false;
+            }
+
+            if (email.value == "") {
+                alert("Please enter a valid e-mail address.");
+                email.focus();
+                return false;
+            }
+
+            if (phone.value == "" || phone.value.length != 10) {
+                alert("Please enter valid phone number.");
+                phone.focus();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>

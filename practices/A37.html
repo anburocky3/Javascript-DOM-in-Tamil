@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A37</title>
+</head>
+
+<body>
+
+    <input placeholder="Enter your name" name="name" />
+    <p id="values"></p>
+
+    <script type="text/javascript">
+        const input = document.querySelector('input');
+        const log = document.getElementById('values');
+
+        input.addEventListener('input', updateValue);
+
+        function updateValue(e) {
+            log.textContent = 'Hello ' + e.target.value.toUpperCase();
+        }
+    </script>
+</body>
+
+</html>
